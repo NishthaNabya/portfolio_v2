@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import 'non.geist'
+// import 'non.geist'
 import './index.css'
 import Layout from './layouts/Layout'
 import App from './App'

@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react';
+import { motion } from 'framer-motion';
 
 const typeOptions = ['Hackathon','Personal project','Volunteer','Research','Case competition'];
 const skillsOptions = ['Data modelling','Data analytics','Machine learning','Data engineering','Dashboarding/BI','A/B testing','SQL','Python','R'];
@@ -6,103 +7,244 @@ const skillsOptions = ['Data modelling','Data analytics','Machine learning','Dat
 interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; skills: string[]; }
 
 const Projects = () => {
-  const [search, setSearch] = useState('');
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const [selectedSkills, setSelectedSkills] = useState<Set<string>>(new Set());
 
   const projects: ProjectItem[] = useMemo(() => [
-    { id: 'trailtype', title: 'TrailType', subtitle: 'Modern design inspired by the great outdoors.', year: 2025, imageUrl: 'https://via.placeholder.com/600x400', type: 'Personal project', skills: ['Data analytics','Dashboarding/BI','Python'] },
-    { id: 'spark', title: 'The Spark Sessions', subtitle: 'A podcast for creators chasing meaningful work.', year: 2024, imageUrl: 'https://via.placeholder.com/600x400', type: 'Volunteer', skills: ['Data modelling','SQL'] },
-    { id: 'wild', title: 'Into the Wild', subtitle: 'A raw journey through nature’s extremes.', year: 2023, imageUrl: 'https://via.placeholder.com/600x400', type: 'Personal project', skills: ['Machine learning','Python'] },
-    { id: 'urban', title: 'Urban Canvas', subtitle: 'Exploring the intersection of art and city life.', year: 2022, imageUrl: 'https://via.placeholder.com/600x400', type: 'Research', skills: ['Data engineering','Data analytics','R'] },
-    { id: 'echoes', title: 'Echoes of Silence', subtitle: 'A study in minimalist soundscapes.', year: 2021, imageUrl: 'https://via.placeholder.com/600x400', type: 'Case competition', skills: ['A/B testing','SQL'] },
+    { 
+      id: 'trailtype', 
+      title: 'TrailType', 
+      subtitle: 'Modern design inspired by the great outdoors.', 
+      year: 2025, 
+      imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e', 
+      type: 'Personal project', 
+      skills: ['Data analytics','Dashboarding/BI','Python'] 
+    },
+    { 
+      id: 'spark', 
+      title: 'The Spark Sessions', 
+      subtitle: 'A podcast for creators chasing meaningful work.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618', 
+      type: 'Volunteer', 
+      skills: ['Data modelling','SQL'] 
+    },
+    { 
+      id: 'wild', 
+      title: 'Into the Wild', 
+      subtitle: 'A raw journey through nature extremes.', 
+      year: 2023, 
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4', 
+      type: 'Personal project', 
+      skills: ['Machine learning','Python'] 
+    },
+    { 
+      id: 'urban', 
+      title: 'Urban Canvas', 
+      subtitle: 'Exploring the intersection of art and city life.', 
+      year: 2022, 
+      imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df', 
+      type: 'Research', 
+      skills: ['Data engineering','Data analytics','R'] 
+    },
+    { 
+      id: 'echoes', 
+      title: 'Echoes of Silence', 
+      subtitle: 'A study in minimalist soundscapes.', 
+      year: 2021, 
+      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f', 
+      type: 'Case competition', 
+      skills: ['A/B testing','SQL'] 
+    }
   ], []);
 
   const filtered = useMemo(() => {
-    const q = search.trim().toLowerCase();
     return projects.filter(p => {
-      const matchSearch = q === '' || p.title.toLowerCase().includes(q) || p.subtitle.toLowerCase().includes(q);
       const matchType = !selectedType || p.type === selectedType;
       const matchSkills = selectedSkills.size === 0 || Array.from(selectedSkills).every(s => p.skills.includes(s));
-      return matchSearch && matchType && matchSkills;
+      return matchType && matchSkills;
     });
-  }, [projects, search, selectedType, selectedSkills]);
+  }, [projects, selectedType, selectedSkills]);
 
   const toggleSkill = (s: string) => setSelectedSkills(prev => { const n = new Set(prev); if (n.has(s)) n.delete(s); else n.add(s); return n; });
-  const clearFilters = () => { setSearch(''); setSelectedType(null); setSelectedSkills(new Set()); };
+  const clearFilters = () => { setSelectedType(null); setSelectedSkills(new Set()); };
 
   return (
-    <section className="pt-16 pb-24 px-4 bg-white">
-      <div className="flex justify-between items-center mb-6">
-        <div>
-          <h1 className="text-4xl font-bold text-gray-900">Projects</h1>
-          <div className="w-24 h-1 bg-accent mt-2" />
-        </div>
+    <section className="pt-16 pb-8">
+      <div className="mb-12">
+        <h1 className="text-4xl font-bold text-gray-900">Projects</h1>
+        <div className="w-24 h-1 bg-accent mt-2 mb-6" />
+        <p className="text-gray-600 max-w-2xl">
+          A collection of projects showcasing my skills in data analytics, machine learning, and business intelligence across various domains and challenges.
+        </p>
       </div>
 
       {/* Filters */}
-      <div className="space-y-4">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-          <div className="relative w-full md:max-w-xl">
-            <svg className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
-            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Search projects..." className="w-full rounded-full border border-gray-200 bg-gray-50 px-10 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:bg-white" />
-          </div>
-          <div className="md:ml-auto">
-            <button onClick={clearFilters} className="text-sm text-gray-600 hover:text-gray-900 underline underline-offset-4">Clear</button>
-          </div>
-        </div>
-        <div>
-          <div className="text-xs uppercase tracking-wide text-gray-500 mb-2">Type</div>
-          <div role="radiogroup" aria-label="Project Type" className="flex items-center gap-2 flex-wrap">
-            {typeOptions.map(t => {
-              const active = selectedType === t;
-              return (
-                <button key={t} role="radio" aria-checked={active} onClick={() => setSelectedType(active ? null : t)} className={`${'whitespace-nowrap rounded-full border px-3 py-1.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-accent'} ${active ? 'bg-accent text-white border-transparent' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-100'}`}>{t}</button>
-              );
-            })}
-          </div>
-        </div>
-        <div>
-          <div className="text-xs uppercase tracking-wide text-gray-500 mb-2">Skills</div>
-          <div className="flex items-center gap-2 flex-wrap">
-            {skillsOptions.map(s => {
-              const active = selectedSkills.has(s);
-              return (
-                <button key={s} aria-pressed={active} onClick={() => toggleSkill(s)} className={`${'whitespace-nowrap rounded-full border px-3 py-1.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-accent'} ${active ? 'bg-accent text-white border-transparent' : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-100'}`}>{s}</button>
-              );
-            })}
-          </div>
-        </div>
-        {(selectedType || selectedSkills.size > 0) && (
-          <div className="flex flex-wrap items-center gap-2 pt-1">
-            {selectedType && (
-              <button onClick={() => setSelectedType(null)} className="flex items-center gap-2 rounded-full bg-gray-100 text-gray-800 px-3 py-1 text-sm">{selectedType}<span aria-hidden>✕</span></button>
+      <div className="mb-8">
+        {/* Filter Categories */}
+        <div className="space-y-4">
+          {/* Clear Filters Button - Inline */}
+          <div className="flex items-center justify-between">
+            <h2 className="text-lg font-semibold text-gray-900">Filter Projects</h2>
+            {(selectedType || selectedSkills.size > 0) && (
+              <button 
+                onClick={clearFilters} 
+                className="text-sm text-gray-600 hover:text-accent transition-colors font-medium"
+              >
+                Clear all filters
+              </button>
             )}
-            {Array.from(selectedSkills).map(s => (
-              <button key={s} onClick={() => toggleSkill(s)} className="flex items-center gap-2 rounded-full bg-gray-100 text-gray-800 px-3 py-1 text-sm">{s}<span aria-hidden>✕</span></button>
-            ))}
           </div>
-        )}
+          {/* Type Filter */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">Project Type</h3>
+            <div role="radiogroup" aria-label="Project Type" className="flex flex-wrap gap-2">
+              {typeOptions.map(t => {
+                const active = selectedType === t;
+                return (
+                  <button 
+                    key={t} 
+                    role="radio" 
+                    aria-checked={active} 
+                    onClick={() => setSelectedType(active ? null : t)} 
+                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
+                      active 
+                        ? 'bg-accent/10 text-accent shadow-sm' 
+                        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
+                    }`}
+                    style={active ? { borderColor: '#BE3D2A' } : {}}
+                  >
+                    {t}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Skills Filter */}
+          <div>
+            <h3 className="text-sm font-semibold text-gray-900 mb-3">Skills & Technologies</h3>
+            <div className="flex flex-wrap gap-2">
+              {skillsOptions.map(s => {
+                const active = selectedSkills.has(s);
+                return (
+                  <button 
+                    key={s} 
+                    aria-pressed={active} 
+                    onClick={() => toggleSkill(s)} 
+                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
+                      active 
+                        ? 'bg-accent/10 text-accent shadow-sm' 
+                        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
+                    }`}
+                    style={active ? { borderColor: '#BE3D2A' } : {}}
+                  >
+                    {s}
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Active Filters Display */}
+          {(selectedType || selectedSkills.size > 0) && (
+            <div className="pt-2 border-t border-gray-200">
+              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                <span className="font-medium">Active filters:</span>
+              </div>
+              <div className="flex flex-wrap gap-2">
+                {selectedType && (
+                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
+                    {selectedType}
+                    <button 
+                      onClick={() => setSelectedType(null)} 
+                      className="hover:text-accent/80 ml-1"
+                      aria-label={`Remove ${selectedType} filter`}
+                    >
+                      ×
+                    </button>
+                  </span>
+                )}
+                {Array.from(selectedSkills).map(s => (
+                  <span key={s} className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
+                    {s}
+                    <button 
+                      onClick={() => toggleSkill(s)} 
+                      className="hover:text-accent/80 ml-1"
+                      aria-label={`Remove ${s} filter`}
+                    >
+                      ×
+                    </button>
+                  </span>
+                ))}
+              </div>
+            </div>
+          )}
+        </div>
       </div>
 
-      {/* Grid */}
-      <div className="mt-6 grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        {filtered.map(p => (
-          <div key={p.id} className="relative group rounded-lg overflow-hidden shadow-sm ring-1 ring-gray-200 hover:shadow-md transition-shadow">
-            <img src={p.imageUrl} alt={p.title} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h3 className="text-base font-bold text-gray-900">{p.title}</h3>
-              <p className="text-sm text-gray-600 mt-1">{p.subtitle}</p>
-              <div className="mt-2 flex flex-wrap gap-1.5">
-                {p.skills.slice(0, 4).map(skill => (<span key={skill} className="text-[11px] px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">{skill}</span>))}
+      {/* Results Count */}
+      <div className="mb-6">
+        <p className="text-sm text-gray-600">
+          {filtered.length === projects.length 
+            ? `Showing all ${filtered.length} projects` 
+            : `Showing ${filtered.length} of ${projects.length} projects`
+          }
+        </p>
+      </div>
+
+      {/* Projects Grid */}
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {filtered.map((project) => (
+          <div
+            key={project.id}
+            className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300"
+          >
+            <div className="relative overflow-hidden">
+              <img 
+                src={project.imageUrl} 
+                alt={project.title} 
+                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
+              />
+              <div className="absolute top-3 right-3">
+                <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-700 rounded text-xs font-medium">
+                  {project.year}
+                </span>
               </div>
+            </div>
+            
+            <div className="p-6">
+              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 text-sm leading-relaxed">
+                {project.subtitle}
+              </p>
             </div>
           </div>
         ))}
-        {filtered.length === 0 && (
-          <div className="col-span-full text-sm text-gray-600">No projects match your filters.</div>
-        )}
       </div>
+
+      {/* Empty State */}
+      {filtered.length === 0 && (
+        <div className="text-center py-12">
+          <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
+            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.563M15 6.75a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 className="text-lg font-semibold text-gray-900 mb-2">No projects found</h3>
+          <p className="text-gray-600 mb-4">
+            Try adjusting your filters or search terms to find what you're looking for.
+          </p>
+          <button 
+            onClick={clearFilters}
+            className="px-4 py-2 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
+          >
+            Clear all filters
+          </button>
+        </div>
+      )}
     </section>
   );
 };
