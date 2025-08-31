@@ -2,13 +2,13 @@ import { useMemo, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const typeOptions = ['Hackathon','Personal project','Volunteer','Research','Case competition'];
-const skillsOptions = ['Data modelling','Data analytics','Machine learning','Data engineering','Dashboarding/BI','A/B testing','SQL','Python','R'];
 
-interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; skills: string[]; }
+
+interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; }
 
 const Projects = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const [selectedSkills, setSelectedSkills] = useState<Set<string>>(new Set());
+
 
   const projects: ProjectItem[] = useMemo(() => [
     { 
@@ -17,8 +17,7 @@ const Projects = () => {
       subtitle: 'Modern design inspired by the great outdoors.', 
       year: 2025, 
       imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e', 
-      type: 'Personal project', 
-      skills: ['Data analytics','Dashboarding/BI','Python'] 
+      type: 'Personal project'
     },
     { 
       id: 'spark', 
@@ -26,8 +25,7 @@ const Projects = () => {
       subtitle: 'A podcast for creators chasing meaningful work.', 
       year: 2024, 
       imageUrl: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618', 
-      type: 'Volunteer', 
-      skills: ['Data modelling','SQL'] 
+      type: 'Volunteer'
     },
     { 
       id: 'wild', 
@@ -35,8 +33,7 @@ const Projects = () => {
       subtitle: 'A raw journey through nature extremes.', 
       year: 2023, 
       imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4', 
-      type: 'Personal project', 
-      skills: ['Machine learning','Python'] 
+      type: 'Personal project'
     },
     { 
       id: 'urban', 
@@ -44,8 +41,7 @@ const Projects = () => {
       subtitle: 'Exploring the intersection of art and city life.', 
       year: 2022, 
       imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df', 
-      type: 'Research', 
-      skills: ['Data engineering','Data analytics','R'] 
+      type: 'Research'
     },
     { 
       id: 'echoes', 
@@ -53,21 +49,18 @@ const Projects = () => {
       subtitle: 'A study in minimalist soundscapes.', 
       year: 2021, 
       imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f', 
-      type: 'Case competition', 
-      skills: ['A/B testing','SQL'] 
+      type: 'Case competition'
     }
   ], []);
 
   const filtered = useMemo(() => {
     return projects.filter(p => {
       const matchType = !selectedType || p.type === selectedType;
-      const matchSkills = selectedSkills.size === 0 || Array.from(selectedSkills).every(s => p.skills.includes(s));
-      return matchType && matchSkills;
+      return matchType;
     });
-  }, [projects, selectedType, selectedSkills]);
+  }, [projects, selectedType]);
 
-  const toggleSkill = (s: string) => setSelectedSkills(prev => { const n = new Set(prev); if (n.has(s)) n.delete(s); else n.add(s); return n; });
-  const clearFilters = () => { setSelectedType(null); setSelectedSkills(new Set()); };
+  const clearFilters = () => { setSelectedType(null); };
 
   return (
     <section className="pt-16 pb-8">
@@ -86,12 +79,12 @@ const Projects = () => {
           {/* Clear Filters Button - Inline */}
           <div className="flex items-center justify-between">
             <h2 className="text-lg font-semibold text-gray-900">Filter Projects</h2>
-            {(selectedType || selectedSkills.size > 0) && (
+            {selectedType && (
               <button 
                 onClick={clearFilters} 
                 className="text-sm text-gray-600 hover:text-accent transition-colors font-medium"
               >
-                Clear all filters
+                Clear filter
               </button>
             )}
           </div>
@@ -121,62 +114,25 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Skills Filter */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">Skills & Technologies</h3>
-            <div className="flex flex-wrap gap-2">
-              {skillsOptions.map(s => {
-                const active = selectedSkills.has(s);
-                return (
-                  <button 
-                    key={s} 
-                    aria-pressed={active} 
-                    onClick={() => toggleSkill(s)} 
-                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
-                      active 
-                        ? 'bg-accent/10 text-accent shadow-sm' 
-                        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
-                    }`}
-                    style={active ? { borderColor: '#BE3D2A' } : {}}
-                  >
-                    {s}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+
 
           {/* Active Filters Display */}
-          {(selectedType || selectedSkills.size > 0) && (
+          {selectedType && (
             <div className="pt-2 border-t border-gray-200">
               <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                <span className="font-medium">Active filters:</span>
+                <span className="font-medium">Active filter:</span>
               </div>
               <div className="flex flex-wrap gap-2">
-                {selectedType && (
-                  <span className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
-                    {selectedType}
-                    <button 
-                      onClick={() => setSelectedType(null)} 
-                      className="hover:text-accent/80 ml-1"
-                      aria-label={`Remove ${selectedType} filter`}
-                    >
-                      ×
-                    </button>
-                  </span>
-                )}
-                {Array.from(selectedSkills).map(s => (
-                  <span key={s} className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
-                    {s}
-                    <button 
-                      onClick={() => toggleSkill(s)} 
-                      className="hover:text-accent/80 ml-1"
-                      aria-label={`Remove ${s} filter`}
-                    >
-                      ×
-                    </button>
-                  </span>
-                ))}
+                <span className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
+                  {selectedType}
+                  <button 
+                    onClick={() => setSelectedType(null)} 
+                    className="hover:text-accent/80 ml-1"
+                    aria-label={`Remove ${selectedType} filter`}
+                  >
+                    ×
+                  </button>
+                </span>
               </div>
             </div>
           )}
@@ -241,7 +197,7 @@ const Projects = () => {
             onClick={clearFilters}
             className="px-4 py-2 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
           >
-            Clear all filters
+            Clear filter
           </button>
         </div>
       )}
