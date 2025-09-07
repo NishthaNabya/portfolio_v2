@@ -4,3 +4,4 @@ export { default as LatestProjects } from './LatestProjects';
 export { default as ImpactMetrics } from './ImpactMetrics';
 export { default as TechStackHero } from './TechStackHero';
 export { default as ContactStrip } from './ContactStrip';
+export { default as CircularGallery } from './CircularGallery';

@@ -14,12 +14,8 @@ const Navbar = () => {
         <Link to="/about" className="text-gray-800 hover:text-accent mx-2 text-sm">About</Link>
         <Link to="/work" className="text-gray-800 hover:text-accent mx-2 text-sm">Work</Link>
         <Link to="/projects" className="text-gray-800 hover:text-accent mx-2 text-sm">Projects</Link>
-        <Link to="/leadership" className="text-gray-800 hover:text-accent mx-2 text-sm">Leadership</Link>
       </div>
       <div className="flex items-center">
-        <a href="#x" className="text-gray-800 hover:text-accent mx-2" aria-label="X">
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
-        </a>
         <a href="#linkedin" className="text-gray-800 hover:text-accent mx-2" aria-label="LinkedIn">
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
         </a>

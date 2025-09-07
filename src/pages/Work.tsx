@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 interface WorkExperience {
   id: string;
@@ -157,12 +156,8 @@ const Work: React.FC = () => {
       {/* Experience Listings */}
       <div className="space-y-8">
         {workExperiences.map((experience) => (
-          <motion.div
+          <div
             key={experience.id}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.5 }}
             className="group"
           >
             {/* Main Content Row */}
@@ -218,18 +213,12 @@ const Work: React.FC = () => {
                 </div>
               </div>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
 
       {/* Call to Action */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5 }}
-        className="mt-12 pt-12 border-t border-gray-200"
-      >
+      <div className="mt-12 pt-12 border-t border-gray-200">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
           <div className="flex items-start gap-4 flex-1">
             <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
@@ -256,7 +245,7 @@ const Work: React.FC = () => {
             </a>
           </div>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 };

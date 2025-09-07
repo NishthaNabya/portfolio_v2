@@ -1,7 +1,6 @@
 import { useMemo, useState } from 'react';
-import { motion } from 'framer-motion';
 
-const typeOptions = ['Hackathon','Personal project','Volunteer','Research','Case competition'];
+const typeOptions = ['Hackathon','Personal project','Research','Case competition'];
 
 
 interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; }
