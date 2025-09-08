@@ -64,7 +64,7 @@ const Projects = () => {
   const clearFilters = () => { setSelectedType(null); };
 
   return (
-    <section className="pt-16 pb-8">
+    <section className="pt-8 pb-8 px-4">
       <div className="mb-12">
         <h1 className="text-4xl font-bold text-gray-900">Projects</h1>
         <div className="w-24 h-1 bg-accent mt-2 mb-6" />

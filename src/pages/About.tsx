@@ -2,7 +2,7 @@ import { PhotographyGrid, CurrentProjectsCard, ProfileIDCard } from '../componen
 
 const About: React.FC = () => {
   return (
-    <section className="pt-16 pb-24">
+    <section className="pt-8 pb-24 px-4">
       {/* Header with Image */}
       <div className="mb-16">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">About Me</h1>

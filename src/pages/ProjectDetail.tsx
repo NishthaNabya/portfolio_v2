@@ -122,7 +122,7 @@ const ProjectDetail = () => {
 
   if (!project) {
     return (
-      <section className="pt-16 pb-24">
+      <section className="pt-8 pb-24 px-4">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gray-900 mb-4">Project Not Found</h1>
           <p className="text-gray-600 mb-8">The project you're looking for doesn't exist.</p>
@@ -138,7 +138,7 @@ const ProjectDetail = () => {
   }
 
   return (
-    <section className="pt-16 pb-24">
+    <section className="pt-8 pb-24 px-4">
       {/* Header Section */}
       <div className="mb-12">
         {/* Back Button and Project Type on same line */}
