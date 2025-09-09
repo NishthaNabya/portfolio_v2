@@ -15,11 +15,6 @@ const CurrentProjectsCard = () => {
       text: "Every photograph is a conversation between light, time, and emotion. The technical aspects are just the vocabulary.",
       date: "1 week ago",
       category: "Photography"
-    },
-    {
-      text: "Travel isn't about collecting destinations—it's about collecting perspectives. Each journey should change how you see the world.",
-      date: "2 weeks ago",
-      category: "Travel"
     }
   ];
 
