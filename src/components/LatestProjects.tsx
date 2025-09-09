@@ -13,11 +13,11 @@ const LatestProjects = () => {
   const navigate = useNavigate();
   
   const projects: ProjectItem[] = useMemo(() => [
-    { id: 'trailtype', title: 'TrailType', subtitle: 'Modern design inspired by the great outdoors.', type: 'Personal project', imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e' },
-    { id: 'spark', title: 'The Spark Sessions', subtitle: 'A podcast for creators chasing meaningful work.', type: 'Volunteer', imageUrl: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618' },
-    { id: 'wild', title: 'Into the Wild', subtitle: 'A raw journey through nature extremes.', type: 'Personal project', imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4' },
-    { id: 'urban', title: 'Urban Canvas', subtitle: 'Exploring the intersection of art and city life.', type: 'Research', imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df' },
-    { id: 'echoes', title: 'Echoes of Silence', subtitle: 'A study in minimalist soundscapes.', type: 'Case competition', imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f' },
+    { id: 'portfolio-website', title: 'Portfolio Website', subtitle: 'Modern, responsive portfolio with cutting-edge web technologies.', type: 'Personal project', imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d' },
+    { id: 'nlp-transformer', title: 'NLP Transformer Model', subtitle: 'RoBERTA-based sentiment analysis for business insights.', type: 'Personal project', imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c' },
+    { id: 'minneanalytics', title: 'MinneAnalytics', subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment analysis.', type: 'Hackathon', imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71' },
+    { id: 'develop-for-good', title: 'Website Redesign - Develop for Good', subtitle: 'Framer-based website redesign for nonprofit.', type: 'Volunteer', imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd' },
+    { id: 'aurora-center', title: 'The Aurora Center for Advocacy', subtitle: 'Supporting survivors of sexual violence through advocacy.', type: 'Volunteer', imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca' },
   ], []);
 
   return (

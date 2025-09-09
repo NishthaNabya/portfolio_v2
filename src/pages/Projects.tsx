@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const typeOptions = ['Hackathon','Personal project','Research','Case competition'];
+const typeOptions = ['Hackathon','Personal project','Research','Case competition','Volunteer'];
 
 
 interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; }
@@ -13,44 +13,68 @@ const Projects = () => {
 
   const projects: ProjectItem[] = useMemo(() => [
     { 
-      id: 'trailtype', 
-      title: 'TrailType', 
-      subtitle: 'Modern design inspired by the great outdoors.', 
+      id: 'portfolio-website', 
+      title: 'Portfolio Website', 
+      subtitle: 'Modern, responsive portfolio with cutting-edge web technologies and smooth animations.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e', 
+      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d', 
       type: 'Personal project'
     },
     { 
-      id: 'spark', 
-      title: 'The Spark Sessions', 
-      subtitle: 'A podcast for creators chasing meaningful work.', 
+      id: 'nlp-transformer', 
+      title: 'NLP Transformer Model', 
+      subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618', 
+      imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c', 
+      type: 'Personal project'
+    },
+    { 
+      id: 'minneanalytics', 
+      title: 'MinneAnalytics', 
+      subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71', 
+      type: 'Hackathon'
+    },
+    { 
+      id: 'china-bridge', 
+      title: 'China Bridge Challenge', 
+      subtitle: 'International participant demonstrating cross-cultural communication and Chinese language proficiency.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4', 
+      type: 'Case competition'
+    },
+    { 
+      id: 'mckinsey-case', 
+      title: 'McKinsey Case Competition', 
+      subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43', 
+      type: 'Case competition'
+    },
+    { 
+      id: 'develop-for-good', 
+      title: 'Website Redesign - Develop for Good', 
+      subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd', 
       type: 'Volunteer'
     },
     { 
-      id: 'wild', 
-      title: 'Into the Wild', 
-      subtitle: 'A raw journey through nature extremes.', 
-      year: 2023, 
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4', 
-      type: 'Personal project'
+      id: 'aurora-center', 
+      title: 'The Aurora Center for Advocacy', 
+      subtitle: 'Supporting advocacy efforts for survivors of sexual violence through volunteer work.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca', 
+      type: 'Volunteer'
     },
     { 
-      id: 'urban', 
-      title: 'Urban Canvas', 
-      subtitle: 'Exploring the intersection of art and city life.', 
-      year: 2022, 
-      imageUrl: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df', 
-      type: 'Research'
-    },
-    { 
-      id: 'echoes', 
-      title: 'Echoes of Silence', 
-      subtitle: 'A study in minimalist soundscapes.', 
-      year: 2021, 
-      imageUrl: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f', 
-      type: 'Case competition'
+      id: 'nami-volunteer', 
+      title: 'NAMI Volunteering', 
+      subtitle: 'Mental health advocacy and support services with National Alliance on Mental Illness.', 
+      year: 2024, 
+      imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56', 
+      type: 'Volunteer'
     }
   ], []);
 
