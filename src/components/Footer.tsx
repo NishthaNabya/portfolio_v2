@@ -20,7 +20,7 @@ const Footer = () => {
 							<h3 className="text-lg font-semibold text-gray-300">Portfolio of Nishtha Nabya</h3>
 						</div>
 						<div className="mt-4 text-sm text-gray-400 max-w-md">
-							Crafting clean, thoughtful experiences across analytics, systems, and design. Always learning. Always building.
+							Delivering data-driven answers that truly help users succeed.<br />Always learning. Always building.
 						</div>
 						<nav className="mt-8 flex flex-wrap gap-4 text-sm">
 							<a href="/about" className="text-gray-300 hover:text-accent transition-colors">About</a>
@@ -82,6 +82,8 @@ const Footer = () => {
 };
 
 export default Footer;
+
+
 
 
 

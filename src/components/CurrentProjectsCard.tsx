@@ -15,14 +15,19 @@ const CurrentProjectsCard = () => {
       text: "Every photograph is a conversation between light, time, and emotion. The technical aspects are just the vocabulary.",
       date: "1 week ago",
       category: "Photography"
+    },
+    {
+      text: "Data tells stories, but it's our job as analysts to make sure we're listening to the right narrative and not just the loudest one.",
+      date: "3 days ago",
+      category: "Data Science"
     }
   ];
 
   return (
     <div className="bg-white border border-gray-200 rounded-lg p-6 h-fit">
       {/* Header */}
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-gray-900 mb-4">Current Thoughts</h3>
+      <div className="mb-4">
+        <h3 className="text-xl font-bold text-gray-900 mb-2">Current Thoughts</h3>
         <div className="w-12 h-[2px] bg-accent" />
       </div>
 

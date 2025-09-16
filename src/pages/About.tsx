@@ -23,7 +23,7 @@ const About: React.FC = () => {
 
             {/* What I Bring to the Table Section */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">What I Bring to the Table</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">What I bring to the table</h3>
               <div className="w-16 h-[3px] bg-accent mb-6" />
               <div className="space-y-4">
                 <p className="leading-relaxed">
@@ -40,14 +40,25 @@ const About: React.FC = () => {
 
             {/* Sed Ut Perspiciatis Section */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Sed Ut Perspiciatis</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">Many things I love to do</h3>
               <div className="w-16 h-[3px] bg-accent mb-6" />
               <div className="space-y-4">
                 <p className="leading-relaxed">
-                  Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+                  I’m all about trying different hobbies that inspire me and keep me growing. From dancing and painting to baking tasty treats, I love mixing creativity with fun. Staying active is a big part of my life too, with paddleboarding, swimming, and hiking regularly on my list.
                 </p>
                 <p className="leading-relaxed">
-                  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+                  Traveling is another passion. I've been lucky enough to visit almost 27 countries and feel extremely grateful to have this as part of my life. Whenever I get a break, I save up and set out to explore new places, try new things, and soak in different cultures.
+                </p>
+                <p className="leading-relaxed">
+                  I'm also passionate about photography and am building my freelance work around telling stories through images. It's a cool way to share how I see the world. All these hobbies blend together to make life more interesting. You can see some of my photos down below and follow my page here{' '}
+                  <a 
+                    href="https://instagram.com/nishtha.nabya" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-accent hover:text-accent/80 font-medium transition-colors duration-200 underline decoration-1 underline-offset-2"
+                  >
+                    Instagram
+                  </a>!
                 </p>
               </div>
             </div>

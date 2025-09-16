@@ -29,8 +29,8 @@ const TechStackHero = () => {
       name: 'RStudio', 
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#75AADB">
-          <circle cx="12" cy="12" r="10" stroke="#75AADB" strokeWidth="2" fill="none"/>
-          <path d="M8 8h4c1.1 0 2 .9 2 2s-.9 2-2 2h-2v4h-2V8zm2 3h2c.55 0 1-.45 1-1s-.45-1-1-1h-2v2z" fill="#75AADB"/>
+          <circle cx="12" cy="12" r="10" fill="#75AADB"/>
+          <text x="12" y="16" textAnchor="middle" fontSize="10" fill="white" fontWeight="bold">R</text>
         </svg>
       )
     },
@@ -38,19 +38,21 @@ const TechStackHero = () => {
       name: 'AWS', 
       icon: (
         <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#FF9900">
-          <path d="M6.2 15.3c0 .2 0 .4.1.5.1.2.2.3.4.4.2.1.4.2.7.2s.6-.1.9-.2c.3-.1.5-.3.7-.5l.8.8c-.4.4-.8.7-1.3.9-.5.2-1 .3-1.6.3-.6 0-1.1-.1-1.6-.4-.5-.2-.9-.6-1.2-1-.3-.4-.4-.9-.4-1.5s.1-1.1.4-1.5c.3-.4.7-.8 1.2-1 .5-.2 1-.4 1.6-.4.5 0 1 .1 1.4.3.4.2.8.5 1.1.9l-.8.8c-.2-.3-.4-.5-.7-.6-.3-.1-.6-.2-.9-.2-.5 0-.9.2-1.2.5-.3.4-.5.8-.5 1.4zm6.2-2.9v5.4h-1.1v-5.4h1.1zm2.5 0l1.6 4.1 1.6-4.1h1.2l-2.2 5.4h-1.2l-2.2-5.4h1.2zm-7.1-1.9c0-.2.1-.4.2-.5.1-.1.3-.2.5-.2s.4.1.5.2c.1.1.2.3.2.5s-.1.4-.2.5c-.1.1-.3.2-.5.2s-.4-.1-.5-.2c-.1-.1-.2-.3-.2-.5z"/>
-          <path d="M16.7 18.8c-.4.3-.9.4-1.4.4-.8 0-1.4-.3-1.8-.8-.4-.5-.6-1.2-.6-2s.2-1.5.6-2c.4-.5 1-.8 1.8-.8.5 0 1 .1 1.4.4v.9c-.4-.4-.9-.6-1.4-.6-.5 0-.9.2-1.2.5-.3.3-.4.8-.4 1.4s.1 1.1.4 1.4c.3.3.7.5 1.2.5.5 0 1-.2 1.4-.6v.7z"/>
-          <path d="M20.4 19.2v-.9c.3.3.6.4 1 .4.3 0 .5-.1.7-.2.2-.1.3-.3.3-.5 0-.2-.1-.4-.3-.5-.2-.1-.5-.2-.8-.3-.4-.1-.7-.3-.9-.5-.2-.2-.3-.5-.3-.8 0-.4.2-.8.5-1 .3-.2.7-.3 1.1-.3.4 0 .7.1 1 .3v.9c-.3-.3-.6-.4-.9-.4-.3 0-.5.1-.6.2-.1.1-.2.3-.2.4 0 .2.1.3.2.4.1.1.4.2.7.3.4.1.8.3 1 .5.2.2.3.5.3.9 0 .4-.2.7-.5 1-.3.2-.7.3-1.2.3-.5 0-.9-.1-1.3-.3z"/>
+          <rect x="2" y="4" width="20" height="3" rx="1" fill="#FF9900"/>
+          <rect x="2" y="8" width="20" height="3" rx="1" fill="#FF9900"/>
+          <rect x="2" y="12" width="20" height="3" rx="1" fill="#FF9900"/>
+          <rect x="2" y="16" width="20" height="3" rx="1" fill="#FF9900"/>
+          <text x="12" y="13" textAnchor="middle" fontSize="6" fill="white" fontWeight="bold">AWS</text>
         </svg>
       )
     },
     { 
-      name: 'Oracle Fusion Cloud', 
+      name: 'Oracle Cloud', 
       icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="none">
-          <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM19 18H6c-2.21 0-4-1.79-4-4 0-2.05 1.53-3.76 3.56-3.97l1.07-.11.5-.95C8.08 7.14 9.94 6 12 6c2.62 0 4.88 1.86 5.39 4.43l.3 1.5 1.53.11c1.56.1 2.78 1.41 2.78 2.96 0 1.65-1.35 3-3 3z" fill="#F80000"/>
-          <circle cx="12" cy="13" r="3" fill="white"/>
-          <text x="12" y="15.5" textAnchor="middle" fontSize="4" fill="#F80000" fontWeight="bold">O</text>
+        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#F80000">
+          <circle cx="12" cy="12" r="10" fill="#F80000"/>
+          <circle cx="12" cy="12" r="7" fill="white"/>
+          <text x="12" y="15" textAnchor="middle" fontSize="8" fill="#F80000" fontWeight="bold">O</text>
         </svg>
       )
     },
@@ -71,20 +73,12 @@ const TechStackHero = () => {
       )
     },
     { 
-      name: 'Machine Learning', 
+      name: 'Snowflake', 
       icon: (
-        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#4285F4">
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"/>
-          <circle cx="12" cy="8" r="2" fill="#4285F4"/>
-          <circle cx="8" cy="12" r="1.5" fill="#4285F4"/>
-          <circle cx="16" cy="12" r="1.5" fill="#4285F4"/>
-          <circle cx="10" cy="16" r="1.5" fill="#4285F4"/>
-          <circle cx="14" cy="16" r="1.5" fill="#4285F4"/>
-          <path d="M12 10c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="#4285F4"/>
-          <line x1="12" y1="10" x2="8" y2="12" stroke="#4285F4" strokeWidth="1"/>
-          <line x1="12" y1="10" x2="16" y2="12" stroke="#4285F4" strokeWidth="1"/>
-          <line x1="8" y1="12" x2="10" y2="16" stroke="#4285F4" strokeWidth="1"/>
-          <line x1="16" y1="12" x2="14" y2="16" stroke="#4285F4" strokeWidth="1"/>
+        <svg viewBox="0 0 24 24" className="w-5 h-5" fill="#29B5E8">
+          <circle cx="12" cy="12" r="10" fill="#29B5E8"/>
+          <path d="M12 6v12M6 12h12M8.5 8.5l7 7M15.5 8.5l-7 7" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+          <circle cx="12" cy="12" r="2" fill="white"/>
         </svg>
       )
     }
@@ -107,12 +101,12 @@ const TechStackHero = () => {
           {coreStack.map((tech) => (
             <div 
               key={tech.name}
-              className="group flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-200 hover:border-[#BE3D2A] hover:shadow-sm transition-all duration-200"
+              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-200"
             >
-              <div className="group-hover:scale-110 transition-transform">
+              <div>
                 {tech.icon}
               </div>
-              <span className="text-sm font-medium text-gray-700 group-hover:text-[#BE3D2A]">
+              <span className="text-sm font-medium text-gray-700">
                 {tech.name}
               </span>
             </div>
