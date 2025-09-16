@@ -193,15 +193,6 @@ const Projects = () => {
                   {project.year}
                 </span>
               </div>
-              {/* Click indicator overlay */}
-              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 flex items-center justify-center">
-                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm rounded-full p-2">
-                  <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                  </svg>
-                </div>
-              </div>
             </div>
             
             <div className="p-6">
@@ -215,10 +206,8 @@ const Projects = () => {
                 <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
                   {project.type}
                 </span>
-                <div className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                <div className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  <span className="text-lg font-medium">›</span>
                 </div>
               </div>
             </div>
