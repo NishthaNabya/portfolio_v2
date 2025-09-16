@@ -24,9 +24,8 @@ const Footer = () => {
 						</div>
 						<nav className="mt-8 flex flex-wrap gap-4 text-sm">
 							<a href="/about" className="text-gray-300 hover:text-accent transition-colors">About</a>
-							<a href="/projects" className="text-gray-300 hover:text-accent transition-colors">Projects</a>
 							<a href="/work" className="text-gray-300 hover:text-accent transition-colors">Work</a>
-							<a href="/leadership" className="text-gray-300 hover:text-accent transition-colors">Leadership</a>
+							<a href="/projects" className="text-gray-300 hover:text-accent transition-colors">Projects</a>
 						</nav>
 					</div>
 					<div className="relative">

@@ -7,14 +7,14 @@ interface Thought {
 const CurrentProjectsCard = () => {
   const thoughts: Thought[] = [
     {
-      text: "The best design solutions often emerge from constraints, not unlimited possibilities. Working within boundaries forces creative thinking.",
+      text: "Stay afraid, but do it anyway. What's important is the action. You don't have to wait to be confident. Just do it and eventually the confidence will follow.",
       date: "2 days ago",
-      category: "Design Philosophy"
+      category: "Mindset"
     },
     {
-      text: "Every photograph is a conversation between light, time, and emotion. The technical aspects are just the vocabulary.",
-      date: "1 week ago",
-      category: "Photography"
+      text: "Habits are the compound interest of self-improvement.",
+      date: "4 days ago",
+      category: "Personal Growth"
     },
     {
       text: "Data tells stories, but it's our job as analysts to make sure we're listening to the right narrative and not just the loudest one.",
