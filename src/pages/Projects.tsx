@@ -24,7 +24,7 @@ const Projects = () => {
       id: 'nlp-transformer', 
       title: 'NLP Transformer Model', 
       subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.', 
-      year: 2024, 
+      year: 2025, 
       imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c', 
       type: 'Personal project'
     },
@@ -32,7 +32,7 @@ const Projects = () => {
       id: 'minneanalytics', 
       title: 'MinneAnalytics', 
       subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.', 
-      year: 2024, 
+      year: 2025, 
       imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71', 
       type: 'Hackathon'
     },
@@ -48,7 +48,7 @@ const Projects = () => {
       id: 'mckinsey-case', 
       title: 'McKinsey Case Competition', 
       subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.', 
-      year: 2024, 
+      year: 2025, 
       imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43', 
       type: 'Case competition'
     },
@@ -56,7 +56,7 @@ const Projects = () => {
       id: 'develop-for-good', 
       title: 'Website Redesign - Develop for Good', 
       subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.', 
-      year: 2024, 
+      year: 2025, 
       imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd', 
       type: 'Volunteer'
     },

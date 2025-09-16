@@ -9,7 +9,7 @@ interface WorkExperience {
   description: string;
   achievements: string[];
   technologies: string[];
-  type: 'full-time' | 'internship' | 'freelance' | 'contract';
+  type: 'full-time' | 'internship' | 'freelance' | 'contract' | 'part-time';
   companyUrl?: string;
   logo: string;
   companyColor: string;
@@ -34,7 +34,7 @@ const workExperiences: WorkExperience[] = [
       'Authored NIST-aligned AI governance playbook, securing Compliance & IT Security approval and reducing policy development time by 50%'
     ],
     technologies: ['Oracle Cloud', 'VBA', 'Excel', 'Oracle VB Studio', 'Redwood', 'AI Governance', 'NIST Framework'],
-    logo: 'EL',
+    logo: 'data:image/png;base64,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',
     companyColor: '#3B82F6'
   },
   {
@@ -44,7 +44,7 @@ const workExperiences: WorkExperience[] = [
     location: 'Minneapolis, Minnesota',
     period: 'February 2025 - Present',
     duration: '10+ months',
-    type: 'contract',
+    type: 'internship',
     description: 'Working on GenAI chatbot for Canvas LMS, focusing on cost optimization, data infrastructure, and business development through research presentations.',
     achievements: [
       'Automated weekly cost reports for GenAI chatbot by consolidating spend data across OpenAI, Pinecone, and AWS, cutting manual prep time from 5 to 1 hour per week (-80%)',
@@ -53,7 +53,7 @@ const workExperiences: WorkExperience[] = [
       'Pitched AI research at industry conferences, generating 5+ qualified leads for product trials in colleges/high schools across 3 states'
     ],
     technologies: ['AWS S3', 'Python', 'SQL', 'Machine Learning', 'AI', 'RAG', 'OpenAI', 'Pinecone', 'Google Cloud'],
-    logo: 'SP',
+    logo: 'https://www.smartpal.org/assets/images/logo/logo-with-text-horizontal.svg',
     companyColor: '#10B981'
   },
   {
@@ -63,7 +63,7 @@ const workExperiences: WorkExperience[] = [
     location: 'Minneapolis, Minnesota',
     period: 'April 2024 - Present',
     duration: '1 year 8+ months',
-    type: 'contract',
+    type: 'internship',
     description: 'Part-time role developing JavaScript automation scripts and facilitating cross-functional workshops to optimize workflows and reduce manual effort.',
     achievements: [
       'Developed JavaScript automation scripts for active form submissions, reducing manual data-processing effort from 12 to 5 hours per week (-58%)',
@@ -73,7 +73,7 @@ const workExperiences: WorkExperience[] = [
       'Ensured regulatory adherence before ingestion into PeopleSoft ERP through automated validation'
     ],
     technologies: ['JavaScript', 'PeopleSoft ERP', 'Process Documentation', 'Compliance Automation', 'Data Pipelines'],
-    logo: 'AS',
+    logo: 'data:image/png;base64,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',
     companyColor: '#8B5CF6'
   },
   {
@@ -94,7 +94,7 @@ const workExperiences: WorkExperience[] = [
       'Enabled new team members to independently deliver their first dashboards two weeks faster'
     ],
     technologies: ['SQL', 'Production Analysis', 'Process Optimization', 'Distribution Strategy', 'Dashboard Development'],
-    logo: 'SS',
+    logo: 'http://www.sparklingnsake.com/images/main-logo.png',
     companyColor: '#06B6D4'
   },
   {
@@ -104,7 +104,7 @@ const workExperiences: WorkExperience[] = [
     location: 'Minneapolis, Minnesota',
     period: 'June 2023 - Present',
     duration: '1 year 6+ months',
-    type: 'contract',
+    type: 'part-time',
     description: 'Part-time role mentoring students and junior TAs on learning outcomes, career strategy, and campus engagement while leveraging data analytics to improve student performance.',
     achievements: [
       'Mentored 180+ students and 3 junior TAs on class learning outcomes, career strategy and campus engagement through 1:1 sessions',
@@ -114,7 +114,7 @@ const workExperiences: WorkExperience[] = [
       'Demonstrated consistent excellence in student support and educational impact over multiple academic years'
     ],
     technologies: ['Canvas LMS', 'Educational Analytics', 'Student Mentoring', 'Performance Analysis', 'Feedback Systems'],
-    logo: 'CS',
+    logo: 'https://admin.seedglobaleducation.com/assets/img/school_logos/685bff608636b_Carlson%20-%20Minnesota.jpg',
     companyColor: '#7C3AED'
   }
 ];
@@ -125,6 +125,7 @@ const getTypeColor = (type: string) => {
     case 'internship': return 'bg-blue-50 text-blue-700 border-blue-200';
     case 'freelance': return 'bg-purple-50 text-purple-700 border-purple-200';
     case 'contract': return 'bg-yellow-50 text-yellow-700 border-yellow-200';
+    case 'part-time': return 'bg-orange-50 text-orange-700 border-orange-200';
     default: return 'bg-gray-50 text-gray-700 border-gray-200';
   }
 };
@@ -155,10 +156,18 @@ const Work: React.FC = () => {
                 {/* Company Logo */}
                 <div className="flex items-start gap-4 mb-6">
                   <div 
-                    className="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm"
-                    style={{ backgroundColor: experience.companyColor }}
+                    className="w-12 h-12 rounded-lg flex items-center justify-center text-white font-bold text-sm shadow-sm overflow-hidden"
+                    style={{ backgroundColor: (experience.logo.startsWith('data:image/') || experience.logo.startsWith('http')) ? 'transparent' : experience.companyColor }}
                   >
-                    {experience.logo}
+                    {(experience.logo.startsWith('data:image/') || experience.logo.startsWith('http')) ? (
+                      <img 
+                        src={experience.logo} 
+                        alt={`${experience.company} logo`}
+                        className="w-full h-full object-contain"
+                      />
+                    ) : (
+                      experience.logo
+                    )}
                   </div>
                   <div className="flex-1 min-w-0">
                     <div className="text-sm font-medium text-gray-900 whitespace-nowrap">{experience.period}</div>
@@ -222,7 +231,7 @@ const Work: React.FC = () => {
           </div>
           <div className="flex-shrink-0">
             <a 
-              href="mailto:hello@example.com" 
+              href="mailto:nishtha.nabya@gmail.com" 
               className="inline-flex items-center gap-2 px-6 py-3 bg-accent hover:bg-accent/90 text-white rounded-lg font-medium transition-colors"
             >
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
