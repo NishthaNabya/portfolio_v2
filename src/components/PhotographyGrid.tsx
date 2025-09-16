@@ -15,45 +15,45 @@ const PhotographyGrid = () => {
   const photos: Photo[] = [
     {
       id: '1',
-      src: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop',
-      title: 'Mountain Vista',
-      location: 'Swiss Alps',
-      category: 'Landscape'
+      src: '/102_0509.JPG',
+      title: 'Dramatic Clouds',
+      location: 'Captured',
+      category: 'Sky'
     },
     {
       id: '2',
-      src: 'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2070&auto=format&fit=crop',
-      title: 'Forest Path',
-      location: 'Pacific Northwest',
-      category: 'Nature'
+      src: '/102_1173.JPG',
+      title: 'Evening Cityscape',
+      location: 'Urban',
+      category: 'Street'
     },
     {
       id: '3',
-      src: 'https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?q=80&w=2044&auto=format&fit=crop',
-      title: 'Urban Geometry',
-      location: 'Tokyo',
-      category: 'Architecture'
+      src: '/edited.JPG',
+      title: 'Lakeside Serenity',
+      location: 'Waterfront',
+      category: 'Landscape'
     },
     {
       id: '4',
-      src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop',
-      title: 'Minimal Space',
-      location: 'Iceland',
-      category: 'Minimal'
+      src: '/edited-4.JPG',
+      title: 'Forest Light',
+      location: 'Woodland',
+      category: 'Nature'
     },
     {
       id: '5',
-      src: 'https://images.unsplash.com/photo-1478737270239-2f02b77fc618?q=80&w=2070&auto=format&fit=crop',
-      title: 'Golden Hour',
-      location: 'Santorini',
-      category: 'Travel'
+      src: '/102_1144 2.JPG',
+      title: 'Harbor Serenity',
+      location: 'Lakeside',
+      category: 'Landscape'
     },
     {
       id: '6',
-      src: 'https://images.unsplash.com/photo-1469474968028-56623f02e42e?q=80&w=2070&auto=format&fit=crop',
-      title: 'Lake Mirror',
-      location: 'Banff',
-      category: 'Landscape'
+      src: '/102_1193 2.JPG',
+      title: 'Urban Pathway',
+      location: 'City Park',
+      category: 'Street'
     }
   ];
 

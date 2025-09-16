@@ -17,15 +17,15 @@ const Projects = () => {
       title: 'Portfolio Website', 
       subtitle: 'Modern, responsive portfolio with cutting-edge web technologies and smooth animations.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d', 
+      imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80', 
       type: 'Personal project'
     },
     { 
       id: 'nlp-transformer', 
-      title: 'NLP Transformer Model', 
+      title: 'NLP Model', 
       subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c', 
+      imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80', 
       type: 'Personal project'
     },
     { 
@@ -33,7 +33,7 @@ const Projects = () => {
       title: 'MinneAnalytics', 
       subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71', 
+      imageUrl: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80', 
       type: 'Hackathon'
     },
     { 
@@ -41,7 +41,7 @@ const Projects = () => {
       title: 'China Bridge Challenge', 
       subtitle: 'International participant demonstrating cross-cultural communication and Chinese language proficiency.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4', 
+      imageUrl: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80', 
       type: 'Case competition'
     },
     { 
@@ -49,23 +49,23 @@ const Projects = () => {
       title: 'McKinsey Case Competition', 
       subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1560472354-b33ff0c44a43', 
+      imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', 
       type: 'Case competition'
     },
     { 
       id: 'develop-for-good', 
-      title: 'Website Redesign - Develop for Good', 
+      title: 'Develop for Good', 
       subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1559136555-9303baea8ebd', 
+      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80', 
       type: 'Volunteer'
     },
     { 
       id: 'aurora-center', 
-      title: 'The Aurora Center for Advocacy', 
+      title: 'The Aurora Center', 
       subtitle: 'Supporting advocacy efforts for survivors of sexual violence through volunteer work.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca', 
+      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80', 
       type: 'Volunteer'
     },
     { 
@@ -73,7 +73,7 @@ const Projects = () => {
       title: 'NAMI Volunteering', 
       subtitle: 'Mental health advocacy and support services with National Alliance on Mental Illness.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1559757148-5c350d0d3c56', 
+      imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80', 
       type: 'Volunteer'
     }
   ], []);

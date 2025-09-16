@@ -11,7 +11,7 @@ const ProfileIDCard = () => {
       <div className="flex justify-center mb-6">
         <div className="w-48 h-48 bg-gray-50 border border-gray-200 rounded-lg overflow-hidden">
           <img 
-            src="https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3" 
+            src="/profile-headshot.png" 
             alt="Nishtha Nabya Profile" 
             className="w-full h-full object-cover"
           />

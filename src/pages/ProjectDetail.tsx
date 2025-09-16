@@ -65,7 +65,7 @@ const ProjectDetail = () => {
       title: 'MinneAnalytics',
       subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.',
       year: 2024,
-      imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71',
+      imageUrl: '/Users/nishh/Desktop/portfolio_v2/Gemini_Generated_Image_bzjx0lbzjx0lbzjx.png',
       type: 'Hackathon',
       description: 'Participated in the MinneAnalytics hackathon with 70+ teams, securing a prestigious Serendipity Award by ranking in the top 6%. The project focused on developing advanced machine learning solutions combining natural language processing with ensemble methods to create robust predictive models.',
       technologies: ['Machine Learning', 'NLP', 'RoBERTa', 'Random Forest', 'Python', 'Data Analysis'],

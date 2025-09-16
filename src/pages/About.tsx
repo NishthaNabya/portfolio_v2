@@ -52,7 +52,7 @@ const About: React.FC = () => {
                 <p className="leading-relaxed">
                   I'm also passionate about photography and am building my freelance work around telling stories through images. It's a cool way to share how I see the world. All these hobbies blend together to make life more interesting. You can see some of my photos down below and follow my page here{' '}
                   <a 
-                    href="https://instagram.com/nishtha.nabya" 
+                    href="https://www.instagram.com/unscripted_lenss/" 
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-accent hover:text-accent/80 font-medium transition-colors duration-200 underline decoration-1 underline-offset-2"
