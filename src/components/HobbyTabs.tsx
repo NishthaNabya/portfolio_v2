@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 interface TabContent {
   id: string;
   label: string;
@@ -12,7 +10,7 @@ interface TabContent {
 }
 
 const HobbyTabs = () => {
-  const [activeTab] = useState('reading');
+  // const [activeTab] = useState('reading');
 
   const tabs: TabContent[] = [
     {
