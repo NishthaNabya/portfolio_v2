@@ -38,7 +38,7 @@ const Projects = () => {
     },
     { 
       id: 'china-bridge', 
-      title: 'China Bridge Challenge', 
+      title: 'China Bridge', 
       subtitle: 'International participant demonstrating cross-cultural communication and Chinese language proficiency.', 
       year: 2024, 
       imageUrl: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80', 
@@ -46,10 +46,10 @@ const Projects = () => {
     },
     { 
       id: 'mckinsey-case', 
-      title: 'McKinsey Case Competition', 
+      title: 'McKinsey & Co', 
       subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80', 
+      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3rehHW0MaOSxIWvCJCTVZKW6MQVH3Eu3kvg&s', 
       type: 'Case competition'
     },
     { 
@@ -57,7 +57,7 @@ const Projects = () => {
       title: 'Develop for Good', 
       subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.', 
       year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80', 
+      imageUrl: 'https://cdn.prod.website-files.com/62d7c8cb6f11a35f47072653/63b62174218127933ef2efb1_KHOU-FAST_FORWARD-08504%20(2)%20(1)-p-2000.jpg', 
       type: 'Volunteer'
     },
     { 
@@ -65,7 +65,7 @@ const Projects = () => {
       title: 'The Aurora Center', 
       subtitle: 'Supporting advocacy efforts for survivors of sexual violence through volunteer work.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800&q=80', 
+      imageUrl: 'https://aurora.umn.edu/sites/aurora.umn.edu/files/2021-10/aurora-volunteers-01.jpg', 
       type: 'Volunteer'
     },
     { 
@@ -73,7 +73,7 @@ const Projects = () => {
       title: 'NAMI Volunteering', 
       subtitle: 'Mental health advocacy and support services with National Alliance on Mental Illness.', 
       year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1559757175-0eb30cd8c063?w=800&q=80', 
+      imageUrl: 'https://cdn.forumcomm.com/dims4/default/dde2cac/2147483647/strip/true/crop/1152x768+192+0/resize/840x560!/quality/90/?url=https%3A%2F%2Ffcc-cue-exports-brightspot.s3.us-west-2.amazonaws.com%2Fbemidjipioneer%2Fbinary%2F1546887524987_binary_6866699.jfif', 
       type: 'Volunteer'
     }
   ], []);

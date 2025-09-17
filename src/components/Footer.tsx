@@ -1,15 +1,7 @@
+import { useForm, ValidationError } from '@formspree/react';
+
 const Footer = () => {
-	const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-		e.preventDefault();
-		const form = new FormData(e.currentTarget);
-		console.log({
-			name: form.get('name'),
-			email: form.get('email'),
-			message: form.get('message'),
-		});
-		alert('Thanks! Your message has been captured locally.');
-		e.currentTarget.reset();
-	};
+	const [state, handleSubmit] = useForm("xwpoyndw");
 
 	return (
 		<footer className="mt-16 bg-black">
@@ -38,37 +30,69 @@ const Footer = () => {
 									<div className="w-1 h-1 bg-accent/30 rounded-full"></div>
 								</div>
 							</div>
-							<form onSubmit={handleSubmit} className="space-y-3">
-								<input 
-									name="name" 
-									type="text" 
-									placeholder="Your name" 
-									required 
-									className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
-								/>
-								<input 
-									name="email" 
-									type="email" 
-									placeholder="your@email.com" 
-									required 
-									className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
-								/>
-								<textarea 
-									name="message" 
-									rows={2} 
-									placeholder="What's on your mind?" 
-									required 
-									className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200 resize-none" 
-								/>
-								<div className="flex justify-end">
-									<button 
-										type="submit" 
-										className="px-5 py-2.5 text-sm font-semibold rounded-lg text-white bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 "
-									>
-										Send
-									</button>
+							{state.succeeded ? (
+								<div className="text-center py-4">
+									<div className="text-accent text-sm font-medium mb-2">✨ Message sent successfully!</div>
+									<p className="text-gray-400 text-xs">Thanks for reaching out. I'll get back to you soon!</p>
 								</div>
-							</form>
+							) : (
+								<form onSubmit={handleSubmit} className="space-y-3">
+									<div>
+										<input 
+											name="name" 
+											type="text" 
+											placeholder="Your name" 
+											required 
+											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
+										/>
+										<ValidationError 
+											prefix="Name" 
+											field="name"
+											errors={state.errors}
+											className="text-red-400 text-xs mt-1"
+										/>
+									</div>
+									<div>
+										<input 
+											name="email" 
+											type="email" 
+											placeholder="your@email.com" 
+											required 
+											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
+										/>
+										<ValidationError 
+											prefix="Email" 
+											field="email"
+											errors={state.errors}
+											className="text-red-400 text-xs mt-1"
+										/>
+									</div>
+									<div>
+										<textarea 
+											name="message" 
+											rows={2} 
+											placeholder="What's on your mind?" 
+											required 
+											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200 resize-none" 
+										/>
+										<ValidationError 
+											prefix="Message" 
+											field="message"
+											errors={state.errors}
+											className="text-red-400 text-xs mt-1"
+										/>
+									</div>
+									<div className="flex justify-end">
+										<button 
+											type="submit" 
+											disabled={state.submitting}
+											className="px-5 py-2.5 text-sm font-semibold rounded-lg text-white bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
+										>
+											{state.submitting ? 'Sending...' : 'Send'}
+										</button>
+									</div>
+								</form>
+							)}
 						</div>
 					</div>
 				</div>
