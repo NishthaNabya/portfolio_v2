@@ -58,8 +58,8 @@ const ImpactMetrics = () => {
     
     if (prefersReducedMotion) {
       // Jump straight to final values
-      setAnimatedValues(metrics.map((metric, index) => 
-        metric.compactValue !== undefined ? metric.compactValue : metric.targetValue
+      setAnimatedValues(metrics.map((metric) => 
+        metric.targetValue
       ));
       return;
     }
@@ -68,7 +68,7 @@ const ImpactMetrics = () => {
     metrics.forEach((metric, index) => {
       const duration = 1200 + (index * 150); // 1.2s base + stagger
       const startTime = Date.now() + (index * 100); // Stagger start times
-      const targetValue = metric.compactValue !== undefined ? metric.compactValue : metric.targetValue;
+      const targetValue = metric.targetValue;
 
       const animate = () => {
         const elapsed = Date.now() - startTime;
@@ -93,13 +93,11 @@ const ImpactMetrics = () => {
     });
   }, [isVisible]);
 
-  const formatNumber = (value: number, metric: typeof metrics[0], index: number) => {
+  const formatNumber = (metric: typeof metrics[0], index: number) => {
     const animatedValue = animatedValues[index];
     
-    if (metric.compactValue !== undefined) {
-      // For large numbers like 2M+
-      return `${animatedValue}${metric.suffix}`;
-    }
+    // Format the animated value
+    return `${animatedValue}${metric.suffix}`;
     
     // Add commas for thousands
     const formatted = animatedValue.toLocaleString();
@@ -128,9 +126,9 @@ const ImpactMetrics = () => {
               className="text-4xl font-bold mb-3"
               style={{ color: '#BE3D2A' }}
               aria-live="off"
-              aria-label={`${formatNumber(metric.targetValue, metric, index)}`}
+              aria-label={`${formatNumber(metric, index)}`}
             >
-              {formatNumber(metric.targetValue, metric, index)}
+              {formatNumber(metric, index)}
             </div>
             
             {/* Bolded label */}

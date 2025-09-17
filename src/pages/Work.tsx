@@ -13,6 +13,7 @@ interface WorkExperience {
   companyUrl?: string;
   logo: string;
   companyColor: string;
+  location?: string;
 }
 
 const workExperiences: WorkExperience[] = [

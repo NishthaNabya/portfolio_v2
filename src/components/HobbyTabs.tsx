@@ -12,7 +12,7 @@ interface TabContent {
 }
 
 const HobbyTabs = () => {
-  const [activeTab, setActiveTab] = useState('reading');
+  const [activeTab] = useState('reading');
 
   const tabs: TabContent[] = [
     {
@@ -32,7 +32,7 @@ const HobbyTabs = () => {
     }
   ];
 
-  const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
+  // const activeContent = tabs.find(tab => tab.id === activeTab)?.content;
 
   const readingContent = tabs[0].content;
 
