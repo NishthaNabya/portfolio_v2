@@ -30,7 +30,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'ChatTrackr',
     subtitle: 'Chrome extension with Postgres backend centralizing 50+ professional coffee chat records with automated networking workflows.',
     year: 2025,
-    imageUrl: '/src/assets/photos/ChatTrackr.jpg',
+    imageUrl: '/photos/ChatTrackr.jpg',
     type: 'Personal project',
     description: 'ChatTrackr is a comprehensive networking management system built as a Chrome extension with a robust Postgres backend. The platform centralizes professional coffee chat records and automates networking workflows, significantly reducing manual effort while improving relationship management and follow-up efficiency.',
     technologies: ['Python', 'REST APIs', 'Postgres', 'Javascript', 'Node.js', 'Express', 'Chrome Extension', 'LLM Integration', 'SQL'],
@@ -44,7 +44,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'Portfolio Website',
     subtitle: 'Modern, responsive portfolio with cutting-edge web technologies and smooth animations.',
     year: 2025,
-    imageUrl: '/src/assets/photos/portfolio website.avif',
+    imageUrl: '/photos/portfolio website.avif',
     type: 'Personal project',
     description: 'A modern, responsive portfolio website built with cutting-edge web technologies featuring smooth animations, dark mode support, and optimized performance. This project showcases advanced front-end development skills and modern design principles.',
     technologies: ['React', 'Tailwind CSS', 'Framer Motion', 'TypeScript', 'Vite', 'React Router'],
@@ -61,7 +61,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'InsightEdge',
     subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.',
     year: 2025,
-    imageUrl: '/src/assets/photos/InsightEdge.jpg',
+    imageUrl: '/photos/InsightEdge.jpg',
     type: 'Personal project',
     description: 'Developed a sophisticated sentiment analysis application leveraging a RoBERTA-based transformer model to classify text data with high accuracy for business insights. This project demonstrates advanced natural language processing capabilities and machine learning implementation.',
     technologies: ['Python', 'NLP', 'RoBERTA', 'Transformers', 'PyTorch', 'Pandas', 'Scikit-learn'],
@@ -77,7 +77,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'MinneAnalytics',
     subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.',
     year: 2025,
-    imageUrl: '/src/assets/photos/minneanalytics.jpg',
+    imageUrl: '/photos/minneanalytics.jpg',
     type: 'Hackathon',
     description: 'Participated in the MinneAnalytics hackathon with 70+ teams, securing a prestigious Serendipity Award by ranking in the top 6%. The project focused on developing advanced machine learning solutions combining natural language processing with ensemble methods to create robust predictive models.',
     technologies: ['Machine Learning', 'NLP', 'RoBERTa', 'Random Forest', 'Python', 'Data Analysis'],
@@ -91,7 +91,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'China Bridge',
     subtitle: 'International participant demonstrating cross-cultural communication and Chinese language proficiency.',
     year: 2024,
-    imageUrl: '/src/assets/photos/China bridge competition.webp',
+    imageUrl: '/photos/China bridge competition.webp',
     type: 'Case competition',
     description: 'Participated in the prestigious China Bridge Challenge, an international competition that tests cross-cultural communication skills and Chinese language proficiency. This competition brings together global participants to demonstrate their understanding of Chinese culture, language, and international business practices.',
     technologies: ['Cross-Cultural Communication', 'Language Skills', 'International Business', 'Cultural Analysis'],
@@ -105,7 +105,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'McKinsey & Co',
     subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.',
     year: 2025,
-    imageUrl: '/src/assets/photos/Mckinsey.webp',
+    imageUrl: '/photos/Mckinsey.webp',
     type: 'Case competition',
     description: 'Participated as a finalist in McKinsey\'s prestigious case competition, applying strategic consulting frameworks to solve complex business challenges. The competition involved analyzing real-world business scenarios and presenting solutions to industry professionals and McKinsey consultants.',
     technologies: ['Strategy', 'Consulting', 'Business Analysis', 'Strategic Frameworks', 'Presentation Skills'],
@@ -119,7 +119,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'Develop for Good',
     subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.',
     year: 2025,
-    imageUrl: '/src/assets/photos/Develop for good.jpg',
+    imageUrl: '/photos/Develop for good.jpg',
     type: 'Team project',
     description: 'Volunteered with Develop for Good to redesign their website using Framer, focusing on improving user experience and visual appeal for a nonprofit organization dedicated to connecting skilled volunteers with social impact projects. The redesign aimed to better communicate their mission and increase volunteer engagement.',
     technologies: ['Framer', 'UI/UX Design', 'Web Design', 'Nonprofit Sector', 'User Experience'],
@@ -133,7 +133,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'The Aurora Center',
     subtitle: 'Supporting advocacy efforts for survivors of sexual violence through volunteer work.',
     year: 2024,
-    imageUrl: '/src/assets/photos/aurora-volunteers-01.jpg',
+    imageUrl: '/photos/aurora-volunteers-01.jpg',
     type: 'Volunteer',
     description: 'Volunteered with The Aurora Center for Advocacy, supporting their mission to provide advocacy services for survivors of sexual violence. Contributed to various initiatives aimed at supporting survivors, raising awareness, and promoting prevention education within the community.',
     technologies: ['Advocacy', 'Community Outreach', 'Support Services', 'Social Justice', 'Communication'],
@@ -147,7 +147,7 @@ export const projectsData: ProjectDetail[] = [
     title: 'NAMI Volunteering',
     subtitle: 'Mental health advocacy and support services with National Alliance on Mental Illness.',
     year: 2024,
-    imageUrl: '/src/assets/photos/nami.jpg',
+    imageUrl: '/photos/nami.jpg',
     type: 'Volunteer',
     description: 'Volunteered with the National Alliance on Mental Illness (NAMI), contributing to mental health advocacy and support services. Participated in various programs aimed at reducing stigma, providing education, and supporting individuals and families affected by mental health conditions.',
     technologies: ['Mental Health Advocacy', 'Community Education', 'Support Groups', 'Public Speaking', 'Program Coordination'],
@@ -178,7 +178,7 @@ export const getProjectById = (id: string): ProjectDetail | undefined => {
 // Helper function to get featured projects for hero section
 export const getFeaturedProjects = (): ProjectItem[] => {
   // Return specific projects for the hero section in specified order
-  const featuredIds = ['mckinsey-case', 'chatTrackr', 'develop-for-good', 'InsightEdge', 'china-bridge'];
+  const featuredIds = ['mckinsey-case', 'chatTrackr', 'develop-for-good', 'InsightEdge', 'minneanalytics'];
   const allProjects = getProjectItems();
   return featuredIds.map(id => allProjects.find(project => project.id === id)).filter(Boolean) as ProjectItem[];
 };
