@@ -1,82 +1,12 @@
 import { useMemo, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-const typeOptions = ['Hackathon','Personal project','Research','Case competition','Volunteer'];
-
-
-interface ProjectItem { id: string; title: string; subtitle: string; year: number; imageUrl: string; type: string; }
+import { getProjectItems, typeOptions } from '../data/projects';
 
 const Projects = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
   const navigate = useNavigate();
 
-
-  const projects: ProjectItem[] = useMemo(() => [
-    { 
-      id: 'portfolio-website', 
-      title: 'Portfolio Website', 
-      subtitle: 'Modern, responsive portfolio with cutting-edge web technologies and smooth animations.', 
-      year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=800&q=80', 
-      type: 'Personal project'
-    },
-    { 
-      id: 'nlp-transformer', 
-      title: 'NLP Model', 
-      subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.', 
-      year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=80', 
-      type: 'Personal project'
-    },
-    { 
-      id: 'minneanalytics', 
-      title: 'MinneAnalytics', 
-      subtitle: 'Serendipity Award (Top 6%) - RoBERTa-based sentiment risk feature with Random Forest ensemble.', 
-      year: 2025, 
-      imageUrl: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80', 
-      type: 'Hackathon'
-    },
-    { 
-      id: 'china-bridge', 
-      title: 'China Bridge', 
-      subtitle: 'International participant demonstrating cross-cultural communication and Chinese language proficiency.', 
-      year: 2024, 
-      imageUrl: 'https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?w=800&q=80', 
-      type: 'Case competition'
-    },
-    { 
-      id: 'mckinsey-case', 
-      title: 'McKinsey & Co', 
-      subtitle: 'Finalist applying strategic consulting frameworks to solve complex business challenges.', 
-      year: 2025, 
-      imageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3rehHW0MaOSxIWvCJCTVZKW6MQVH3Eu3kvg&s', 
-      type: 'Case competition'
-    },
-    { 
-      id: 'develop-for-good', 
-      title: 'Develop for Good', 
-      subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.', 
-      year: 2025, 
-      imageUrl: 'https://cdn.prod.website-files.com/62d7c8cb6f11a35f47072653/63b62174218127933ef2efb1_KHOU-FAST_FORWARD-08504%20(2)%20(1)-p-2000.jpg', 
-      type: 'Volunteer'
-    },
-    { 
-      id: 'aurora-center', 
-      title: 'The Aurora Center', 
-      subtitle: 'Supporting advocacy efforts for survivors of sexual violence through volunteer work.', 
-      year: 2024, 
-      imageUrl: 'https://aurora.umn.edu/sites/aurora.umn.edu/files/2021-10/aurora-volunteers-01.jpg', 
-      type: 'Volunteer'
-    },
-    { 
-      id: 'nami-volunteer', 
-      title: 'NAMI Volunteering', 
-      subtitle: 'Mental health advocacy and support services with National Alliance on Mental Illness.', 
-      year: 2024, 
-      imageUrl: 'https://cdn.forumcomm.com/dims4/default/dde2cac/2147483647/strip/true/crop/1152x768+192+0/resize/840x560!/quality/90/?url=https%3A%2F%2Ffcc-cue-exports-brightspot.s3.us-west-2.amazonaws.com%2Fbemidjipioneer%2Fbinary%2F1546887524987_binary_6866699.jfif', 
-      type: 'Volunteer'
-    }
-  ], []);
+  const projects = getProjectItems();
 
   const filtered = useMemo(() => {
     return projects.filter(p => {
