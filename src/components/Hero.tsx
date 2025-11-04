@@ -3,7 +3,7 @@ const Hero = () => {
     <section className="text-left pt-8 px-4 bg-white">
       <h1 className="text-[100px] leading-none font-semibold text-[#BE3D2A]">Nishtha Nabya</h1>
       <div className="flex justify-between items-center mt-2">
-        <h2 className="text-lg font-bold text-gray-700">Business Analytics, Computer Science, Information Systems</h2>
+        <h2 className="text-lg font-bold text-gray-700">Computer Science and Information Systems</h2>
         <p className="text-gray-600">
           <span role="img" aria-label="map pin">📍</span> Minneapolis, MN
         </p>
