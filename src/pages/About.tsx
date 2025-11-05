@@ -21,6 +21,11 @@ const About: React.FC = () => {
               </p>
             </div>
 
+            {/* ProfileIDCard - Mobile only, shown after intro paragraphs */}
+            <div className="lg:hidden">
+              <ProfileIDCard />
+            </div>
+
             {/* What I Bring to the Table Section */}
             <div>
               <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">What I bring to the table</h3>
@@ -66,7 +71,10 @@ const About: React.FC = () => {
           
           {/* Right Column - ID Card and Current Thoughts */}
           <div className="lg:col-span-1 space-y-8">
-            <ProfileIDCard />
+            {/* ProfileIDCard - Desktop only, hidden on mobile */}
+            <div className="hidden lg:block">
+              <ProfileIDCard />
+            </div>
             <CurrentProjectsCard />
           </div>
         </div>
