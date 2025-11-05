@@ -133,11 +133,11 @@ const getTypeColor = (type: string) => {
 
 const Work: React.FC = () => {
   return (
-    <section className="pt-8 pb-8 px-4">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900">Work Experience</h1>
-        <div className="w-24 h-1 bg-accent mt-2 mb-6" />
-        <p className="text-gray-600 max-w-2xl">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-8 px-0 sm:px-4">
+      <div className="mb-8 sm:mb-10 md:mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Work Experience</h1>
+        <div className="w-24 h-1 bg-accent mt-2 mb-4 sm:mb-6" />
+        <p className="text-gray-600 max-w-2xl text-sm sm:text-base">
           A journey through my professional growth, key achievements, and the impact I've made across different organizations and projects.
         </p>
       </div>
@@ -150,7 +150,7 @@ const Work: React.FC = () => {
             className="group"
           >
             {/* Main Content Row */}
-            <div className="flex flex-col md:flex-row md:items-start gap-8 pb-8 border-b border-gray-200 last:border-b-0">
+            <div className="flex flex-col md:flex-row md:items-start gap-4 sm:gap-6 md:gap-8 pb-6 sm:pb-8 border-b border-gray-200 last:border-b-0">
               
               {/* Left Column - Logo, Period & Type */}
               <div className="md:w-56 flex-shrink-0">
@@ -183,17 +183,17 @@ const Work: React.FC = () => {
               {/* Right Column - Main Content */}
               <div className="flex-1">
                 {/* Header */}
-                <div className="mb-6">
-                  <h3 className="text-xl font-bold text-gray-900 group-hover:text-accent transition-colors mb-2">
+                <div className="mb-4 sm:mb-6">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-accent transition-colors mb-2">
                     {experience.position}
                   </h3>
-                  <div className="text-base font-semibold text-accent">
+                  <div className="text-sm sm:text-base font-semibold text-accent">
                     {experience.company}
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="text-gray-700 mb-4 leading-relaxed">{experience.description}</p>
+                <p className="text-gray-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base">{experience.description}</p>
 
                 {/* Technologies */}
                 <div>
@@ -215,17 +215,17 @@ const Work: React.FC = () => {
       </div>
 
       {/* Call to Action */}
-      <div className="mt-12 pt-12 border-t border-gray-200">
-        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          <div className="flex items-start gap-4 flex-1">
-            <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
-              <svg className="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <div className="mt-8 sm:mt-10 md:mt-12 pt-8 sm:pt-10 md:pt-12 border-t border-gray-200">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-6">
+          <div className="flex items-start gap-3 sm:gap-4 flex-1">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-accent/10 flex items-center justify-center flex-shrink-0">
+              <svg className="w-5 h-5 sm:w-6 sm:h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
             </div>
             <div className="flex-1">
-              <h3 className="text-xl font-bold text-gray-900 mb-2">Interested in working together?</h3>
-              <p className="text-gray-600 leading-relaxed">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2">Interested in working together?</h3>
+              <p className="text-gray-600 leading-relaxed text-sm sm:text-base">
                 I'm always open to discussing new opportunities, interesting projects, or just connecting with fellow professionals.
               </p>
             </div>

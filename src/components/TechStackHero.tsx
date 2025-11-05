@@ -85,28 +85,28 @@ const TechStackHero = () => {
   ];
 
   return (
-    <section className="pt-16 px-4 bg-white">
+    <section className="pt-8 sm:pt-12 md:pt-16 px-0 sm:px-4 bg-white">
       <div className="flex items-end justify-between">
         <div>
-          <h2 className="text-3xl font-bold text-gray-900">Current Tech Stack</h2>
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Current Tech Stack</h2>
           <div className="w-24 h-1 bg-accent mt-2" />
         </div>
       </div>
       
-      <div className="mt-8 border-l-2 border-[#BE3D2A] pl-6">
-        <p className="text-gray-600 mb-6 max-w-2xl">
+      <div className="mt-6 sm:mt-8 border-l-2 border-[#BE3D2A] pl-3 sm:pl-6">
+        <p className="text-gray-600 mb-4 sm:mb-6 max-w-2xl text-sm sm:text-base">
           The tools and technologies I'm currently working with to build meaningful solutions and bring ideas to life.
         </p>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-2 sm:gap-4">
           {coreStack.map((tech) => (
             <div 
               key={tech.name}
-              className="flex items-center gap-3 px-4 py-3 rounded-lg bg-white border border-gray-200"
+              className="flex items-center gap-2 sm:gap-3 px-2 sm:px-4 py-2 sm:py-3 rounded-lg bg-white border border-gray-200"
             >
-              <div>
+              <div className="flex-shrink-0">
                 {tech.icon}
               </div>
-              <span className="text-sm font-medium text-gray-700">
+              <span className="text-xs sm:text-sm font-medium text-gray-700 truncate">
                 {tech.name}
               </span>
             </div>

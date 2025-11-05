@@ -7,7 +7,7 @@ const Layout: React.FC = () => {
   return (
     <>
       <div className="bg-white font-sans">
-        <div className="container mx-auto px-[100px]">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
           <Navbar />
           <main>
             <Outlet />

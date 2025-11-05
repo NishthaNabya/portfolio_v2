@@ -105,17 +105,17 @@ const ImpactMetrics = () => {
   };
 
   return (
-    <section ref={sectionRef} className="pt-16 px-4 bg-white">
+    <section ref={sectionRef} className="pt-8 sm:pt-12 md:pt-16 px-0 sm:px-4 bg-white">
       {/* Left-aligned heading */}
       <div className="text-left">
-        <h2 className="text-3xl font-bold text-gray-900">Impact by Numbers</h2>
-        <p className="text-gray-600 mt-4 max-w-2xl">
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Impact by Numbers</h2>
+        <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base">
           Numbers that reflect my journey of curiosity, learning, and making meaningful impact across different domains.
         </p>
       </div>
       
       {/* Statistics blocks */}
-      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
         {metrics.map((metric, index) => (
           <div 
             key={metric.id}
@@ -123,7 +123,7 @@ const ImpactMetrics = () => {
           >
             {/* Large number with count-up animation */}
             <div 
-              className="text-4xl font-bold mb-3"
+              className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3"
               style={{ color: '#BE3D2A' }}
               aria-live="off"
               aria-label={`${formatNumber(metric, index)}`}
@@ -132,12 +132,12 @@ const ImpactMetrics = () => {
             </div>
             
             {/* Bolded label */}
-            <h3 className="text-lg font-bold text-gray-900 mb-2">
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">
               {metric.label}
             </h3>
             
             {/* Description */}
-            <p className="text-sm text-gray-600 leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
               {metric.description}
             </p>
           </div>

@@ -2,13 +2,13 @@ import { PhotographyGrid, CurrentProjectsCard, ProfileIDCard } from '../componen
 
 const About: React.FC = () => {
   return (
-    <section className="pt-8 pb-24 px-4">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-24 px-0 sm:px-4">
       {/* Main Content */}
-      <div className="mb-8">
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">About Me</h1>
-        <div className="w-24 h-1 bg-accent mb-6" />
+      <div className="mb-6 sm:mb-8">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">About Me</h1>
+        <div className="w-24 h-1 bg-accent mb-4 sm:mb-6" />
         
-        <div className="grid lg:grid-cols-3 gap-12 items-start">
+        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-start">
           {/* Left Column - All Text Content */}
           <div className="lg:col-span-2 text-gray-700 space-y-8">
             {/* Intro Paragraphs */}
@@ -23,8 +23,8 @@ const About: React.FC = () => {
 
             {/* What I Bring to the Table Section */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">What I bring to the table</h3>
-              <div className="w-16 h-[3px] bg-accent mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">What I bring to the table</h3>
+              <div className="w-16 h-[3px] bg-accent mb-4 sm:mb-6" />
               <div className="space-y-4">
                 <p className="leading-relaxed">
                   I bring more than technical skills, I bring a mindset that constantly seeks to uncover smarter, more efficient ways to solve problems. Rather than just working with data, I enjoy transforming it into clear, meaningful insights that guide better decisions and drive tangible results. My approach is both analytical and creative, allowing me to design solutions that are practical yet innovative.
@@ -40,8 +40,8 @@ const About: React.FC = () => {
 
             {/* Sed Ut Perspiciatis Section */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Many things I love to do</h3>
-              <div className="w-16 h-[3px] bg-accent mb-6" />
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Many things I love to do</h3>
+              <div className="w-16 h-[3px] bg-accent mb-4 sm:mb-6" />
               <div className="space-y-4">
                 <p className="leading-relaxed">
                   I’m all about trying different hobbies that inspire me and keep me growing. From dancing and painting to baking tasty treats, I love mixing creativity with fun. Staying active is a big part of my life too, with paddleboarding, swimming, and hiking regularly on my list.

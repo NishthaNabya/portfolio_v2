@@ -25,77 +25,77 @@ const ProjectDetail = () => {
   }
 
   return (
-    <section className="pt-8 pb-24 px-4">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-24 px-0 sm:px-4">
       {/* Header Section */}
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-10 md:mb-12">
         {/* Back Button and Project Type on same line */}
-        <div className="flex items-center justify-between mb-6">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 sm:mb-6 gap-3 sm:gap-0">
           <button 
             onClick={() => navigate('/projects')}
-            className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors font-medium"
+            className="flex items-center gap-2 text-gray-600 hover:text-accent transition-colors font-medium text-sm sm:text-base"
           >
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
             </svg>
             Back to Projects
           </button>
           
-          <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-sm font-medium">
+          <span className="px-3 py-1 bg-accent/10 text-accent rounded-full text-xs sm:text-sm font-medium w-fit">
             {project.type}
           </span>
         </div>
         
-        <h1 className="text-4xl font-bold text-accent mb-4">{project.title}</h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl">{project.subtitle}</p>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-accent mb-3 sm:mb-4">{project.title}</h1>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl">{project.subtitle}</p>
       </div>
 
       {/* Main Image */}
-      <div className="mb-12">
+      <div className="mb-8 sm:mb-10 md:mb-12">
         <img 
           src={project.imageUrl} 
           alt={project.title}
-          className="w-full h-96 object-cover rounded-lg shadow-lg"
+          className="w-full h-48 sm:h-64 md:h-80 lg:h-96 object-cover rounded-lg shadow-lg"
         />
       </div>
 
       {/* Content Grid */}
-      <div className="grid lg:grid-cols-3 gap-12">
+      <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12">
         {/* Main Content */}
         <div className="lg:col-span-2 space-y-8">
           {/* Description */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Overview</h2>
-            <div className="w-16 h-[3px] bg-accent mb-4" />
-            <p className="text-gray-700 leading-relaxed">{project.description}</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Overview</h2>
+            <div className="w-16 h-[3px] bg-accent mb-3 sm:mb-4" />
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.description}</p>
           </div>
 
           {/* Challenge */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Challenge</h2>
-            <div className="w-16 h-[3px] bg-accent mb-4" />
-            <p className="text-gray-700 leading-relaxed">{project.challenges}</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Challenge</h2>
+            <div className="w-16 h-[3px] bg-accent mb-3 sm:mb-4" />
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.challenges}</p>
           </div>
 
           {/* Solution */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Solution</h2>
-            <div className="w-16 h-[3px] bg-accent mb-4" />
-            <p className="text-gray-700 leading-relaxed">{project.solution}</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Solution</h2>
+            <div className="w-16 h-[3px] bg-accent mb-3 sm:mb-4" />
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.solution}</p>
           </div>
 
           {/* Outcome */}
           <div>
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Outcome</h2>
-            <div className="w-16 h-[3px] bg-accent mb-4" />
-            <p className="text-gray-700 leading-relaxed">{project.outcome}</p>
+            <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Outcome</h2>
+            <div className="w-16 h-[3px] bg-accent mb-3 sm:mb-4" />
+            <p className="text-gray-700 leading-relaxed text-sm sm:text-base">{project.outcome}</p>
           </div>
 
           {/* Gallery */}
           {project.gallery && project.gallery.length > 0 && (
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">Gallery</h2>
-              <div className="w-16 h-[3px] bg-accent mb-6" />
-              <div className="grid sm:grid-cols-2 gap-4">
+              <h2 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">Gallery</h2>
+              <div className="w-16 h-[3px] bg-accent mb-4 sm:mb-6" />
+              <div className="grid sm:grid-cols-2 gap-3 sm:gap-4">
                 {project.gallery.map((image, index) => (
                   <img 
                     key={index}
@@ -110,15 +110,15 @@ const ProjectDetail = () => {
         </div>
 
         {/* Sidebar */}
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {/* Technologies */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Technologies</h3>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Technologies</h3>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech, index) => (
                 <span 
                   key={index}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-sm font-medium"
+                  className="px-2 sm:px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs sm:text-sm font-medium"
                 >
                   {tech}
                 </span>
@@ -129,7 +129,7 @@ const ProjectDetail = () => {
           {/* Links */}
           {project.links && (project.links.github || project.links.demo) && (
             <div>
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Links</h3>
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Links</h3>
               <div className="space-y-3">
                 {project.links.github && (
                   <a 
@@ -163,7 +163,7 @@ const ProjectDetail = () => {
 
           {/* Project Details */}
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4">Project Details</h3>
+            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">Project Details</h3>
             <div className="space-y-3">
               <div>
                 <span className="text-sm font-medium text-gray-500">Type</span>

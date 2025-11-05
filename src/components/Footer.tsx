@@ -4,9 +4,9 @@ const Footer = () => {
 	const [state, handleSubmit] = useForm("xwpoyndw");
 
 	return (
-		<footer className="mt-16 bg-black">
-			<div className="container mx-auto px-[100px] py-8">
-				<div className="grid gap-8 md:grid-cols-2">
+		<footer className="mt-8 sm:mt-12 md:mt-16 bg-black">
+			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-6 sm:py-8">
+				<div className="grid gap-6 sm:gap-8 md:grid-cols-2">
 					<div>
 						<div>
 							<h3 className="text-lg font-semibold text-gray-300">Portfolio of Nishtha Nabya</h3>

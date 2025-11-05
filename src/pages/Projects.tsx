@@ -18,11 +18,11 @@ const Projects = () => {
   const clearFilters = () => { setSelectedType(null); };
 
   return (
-    <section className="pt-8 pb-8 px-4">
-      <div className="mb-12">
-        <h1 className="text-4xl font-bold text-gray-900">Projects</h1>
-        <div className="w-24 h-1 bg-accent mt-2 mb-6" />
-        <p className="text-gray-600 max-w-2xl">
+    <section className="pt-4 sm:pt-6 md:pt-8 pb-8 px-0 sm:px-4">
+      <div className="mb-8 sm:mb-10 md:mb-12">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Projects</h1>
+        <div className="w-24 h-1 bg-accent mt-2 mb-4 sm:mb-6" />
+        <p className="text-gray-600 max-w-2xl text-sm sm:text-base">
           A collection of projects showcasing my skills in data analytics, machine learning, and business intelligence across various domains and challenges.
         </p>
       </div>
@@ -105,7 +105,7 @@ const Projects = () => {
       </div>
 
       {/* Projects Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {filtered.map((project) => (
           <div
             key={project.id}
@@ -125,11 +125,11 @@ const Projects = () => {
               </div>
             </div>
             
-            <div className="p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
+            <div className="p-4 sm:p-6">
+              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
-              <p className="text-gray-600 text-sm leading-relaxed mb-3">
+              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3">
                 {project.subtitle}
               </p>
               <div className="flex items-center justify-between">
