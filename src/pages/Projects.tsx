@@ -1,170 +1,122 @@
 import { useMemo, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { getProjectItems, typeOptions } from '../data/projects';
+import { projectsData, typeOptions } from '../data/projects';
 
 const Projects = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
-  const navigate = useNavigate();
-
-  const projects = getProjectItems();
 
   const filtered = useMemo(() => {
-    return projects.filter(p => {
-      const matchType = !selectedType || p.type === selectedType;
-      return matchType;
-    });
-  }, [projects, selectedType]);
+    if (!selectedType) return projectsData;
+    return projectsData.filter(p => p.type === selectedType);
+  }, [selectedType]);
 
-  const clearFilters = () => { setSelectedType(null); };
+  const handleCardClick = (link?: string) => {
+    if (link) window.open(link, '_blank', 'noopener noreferrer');
+  };
 
   return (
-    <section className="pt-4 sm:pt-6 md:pt-8 pb-8 px-0 sm:px-4">
-      <div className="mb-8 sm:mb-10 md:mb-12">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900">Projects</h1>
-        <div className="w-24 h-1 bg-accent mt-2 mb-4 sm:mb-6" />
-        <p className="text-gray-600 max-w-2xl text-sm sm:text-base">
-          A collection of projects showcasing my skills in data analytics, machine learning, and business intelligence across various domains and challenges.
-        </p>
+    <section className="pt-10 pb-16">
+
+      {/* Header */}
+      <div className="mb-10">
+        <p className="text-xs font-medium tracking-widest text-[#BE3D2A] uppercase mb-2">All Work</p>
+        <h1 className="font-serif text-3xl sm:text-4xl text-gray-900">What I've built.</h1>
       </div>
 
-      {/* Filters */}
-      <div className="mb-8">
-        {/* Filter Categories */}
-        <div className="space-y-4">
-          {/* Clear Filters Button - Inline */}
-          <div className="flex items-center justify-between">
-            <h2 className="text-lg font-semibold text-gray-900">Filter Projects</h2>
-            {selectedType && (
-              <button 
-                onClick={clearFilters} 
-                className="text-sm text-gray-600 hover:text-accent transition-colors font-medium"
-              >
-                Clear filter
-              </button>
-            )}
-          </div>
-          {/* Type Filter */}
-          <div>
-            <h3 className="text-sm font-semibold text-gray-900 mb-3">Project Type</h3>
-            <div role="radiogroup" aria-label="Project Type" className="flex flex-wrap gap-2">
-              {typeOptions.map(t => {
-                const active = selectedType === t;
-                return (
-                  <button 
-                    key={t} 
-                    role="radio" 
-                    aria-checked={active} 
-                    onClick={() => setSelectedType(active ? null : t)} 
-                    className={`px-3 py-2 rounded-lg text-xs font-medium transition-all duration-200 border-2 focus:outline-none focus:ring-2 focus:ring-accent/50 ${
-                      active 
-                        ? 'bg-accent/10 text-accent shadow-sm' 
-                        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300 hover:shadow-sm'
-                    }`}
-                    style={active ? { borderColor: '#BE3D2A' } : {}}
-                  >
-                    {t}
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-
-
-          {/* Active Filters Display */}
-          {selectedType && (
-            <div className="pt-2 border-t border-gray-200">
-              <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                <span className="font-medium">Active filter:</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                <span className="inline-flex items-center gap-1 px-2 py-1 bg-accent/10 text-accent rounded text-xs font-medium">
-                  {selectedType}
-                  <button 
-                    onClick={() => setSelectedType(null)} 
-                    className="hover:text-accent/80 ml-1"
-                    aria-label={`Remove ${selectedType} filter`}
-                  >
-                    ×
-                  </button>
-                </span>
-              </div>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Results Count */}
-      <div className="mb-6">
-        <p className="text-sm text-gray-600">
-          {filtered.length === projects.length 
-            ? `Showing all ${filtered.length} projects` 
-            : `Showing ${filtered.length} of ${projects.length} projects`
-          }
-        </p>
-      </div>
-
-      {/* Projects Grid */}
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-        {filtered.map((project) => (
-          <div
-            key={project.id}
-            onClick={() => navigate(`/projects/${project.id}`)}
-            className="group bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-lg hover:border-gray-300 transition-all duration-300 cursor-pointer"
+      {/* Filter pills */}
+      <div className="flex flex-wrap gap-2 mb-10">
+        <button
+          onClick={() => setSelectedType(null)}
+          className={`px-4 py-1.5 rounded-full text-xs font-medium transition-colors border ${
+            !selectedType
+              ? 'bg-gray-900 text-white border-gray-900'
+              : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-700'
+          }`}
+        >
+          All
+        </button>
+        {typeOptions.map(t => (
+          <button
+            key={t}
+            onClick={() => setSelectedType(selectedType === t ? null : t)}
+            className={`px-4 py-1.5 rounded-full text-xs font-medium transition-colors border ${
+              selectedType === t
+                ? 'bg-gray-900 text-white border-gray-900'
+                : 'bg-white text-gray-500 border-gray-200 hover:border-gray-400 hover:text-gray-700'
+            }`}
           >
-            <div className="relative overflow-hidden">
-              <img 
-                src={project.imageUrl} 
-                alt={project.title} 
-                className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" 
-              />
-              <div className="absolute top-3 right-3">
-                <span className="px-2 py-1 bg-white/90 backdrop-blur-sm text-gray-700 rounded text-xs font-medium">
-                  {project.year}
-                </span>
-              </div>
-            </div>
-            
-            <div className="p-4 sm:p-6">
-              <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-accent transition-colors">
-                {project.title}
-              </h3>
-              <p className="text-gray-600 text-xs sm:text-sm leading-relaxed mb-3">
-                {project.subtitle}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
-                  {project.type}
-                </span>
-                <div className="text-accent opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                  <span className="text-lg font-medium">›</span>
-                </div>
-              </div>
-            </div>
-          </div>
+            {t}
+          </button>
         ))}
       </div>
 
-      {/* Empty State */}
+      {/* Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {filtered.map((p) => {
+          const link = p.links?.github || p.links?.live || p.links?.demo;
+          return (
+            <>
+              {/* Mobile: flat card, all info visible */}
+              <div
+                key={`${p.id}-mobile`}
+                onClick={() => handleCardClick(link)}
+                className={`sm:hidden rounded-xl border border-gray-200 bg-white p-5 ${link ? 'cursor-pointer active:border-[#BE3D2A]/50' : ''}`}
+              >
+                <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">{p.type}</span>
+                <h3 className="font-serif text-xl text-gray-900 mt-1 mb-2">{p.title}</h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-3">{p.subtitle}</p>
+                <div className="flex flex-wrap gap-1.5 mb-3">
+                  {p.technologies.slice(0, 4).map(tech => (
+                    <span key={tech} className="text-[10px] text-gray-400 border border-gray-200 rounded-full px-2 py-0.5">{tech}</span>
+                  ))}
+                </div>
+                {link && <span className="text-xs text-[#BE3D2A]">{p.links?.github?.includes('pull') ? 'PR →' : 'View →'} {link.replace('https://github.com/', 'github.com/')}</span>}
+              </div>
+
+              {/* Desktop: hover-reveal card */}
+              <div
+                key={p.id}
+                onClick={() => handleCardClick(link)}
+                className={`hidden sm:block group relative rounded-xl border border-gray-200 bg-white overflow-hidden h-48 hover:border-[#BE3D2A]/30 transition-colors ${link ? 'cursor-pointer' : 'cursor-default'}`}
+              >
+                <div className="absolute inset-0 flex flex-col justify-between p-5 transition-transform duration-300 group-hover:-translate-y-full">
+                  <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">{p.type}</span>
+                  <div>
+                    <h3 className="font-serif text-xl text-gray-900 mb-1">{p.title}</h3>
+                    <span className="text-xs text-gray-400">{p.year}</span>
+                  </div>
+                </div>
+                <div className="absolute inset-0 flex flex-col justify-between p-5 bg-[#BE3D2A] translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                  <p className="text-white/90 text-sm leading-relaxed line-clamp-3">{p.subtitle}</p>
+                  <div className="flex flex-wrap gap-1.5 mt-2">
+                    {p.technologies.slice(0, 4).map(tech => (
+                      <span key={tech} className="text-[10px] text-white/70 border border-white/30 rounded-full px-2 py-0.5">{tech}</span>
+                    ))}
+                  </div>
+                  {link && (
+                    <span className="mt-3 text-white/80 text-xs font-medium">
+                      {p.links?.github?.includes('pull') ? 'PR →' : 'View →'} {link.replace('https://github.com/', 'github.com/')}
+                    </span>
+                  )}
+                </div>
+              </div>
+            </>
+          );
+        })}
+      </div>
+
+      {/* Empty state */}
       {filtered.length === 0 && (
-        <div className="text-center py-12">
-          <div className="w-16 h-16 mx-auto mb-4 bg-gray-100 rounded-full flex items-center justify-center">
-            <svg className="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.172 16.172a4 4 0 015.656 0M9 12h6m-6-4h6m2 5.291A7.962 7.962 0 0112 15c-2.34 0-4.29-1.009-5.824-2.563M15 6.75a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-          </div>
-          <h3 className="text-lg font-semibold text-gray-900 mb-2">No projects found</h3>
-          <p className="text-gray-600 mb-4">
-            Try adjusting your filters or search terms to find what you're looking for.
-          </p>
-          <button 
-            onClick={clearFilters}
-            className="px-4 py-2 bg-accent text-white rounded-lg font-medium hover:bg-accent/90 transition-colors"
+        <div className="py-16 text-center">
+          <p className="font-serif text-lg text-gray-400">No projects match that filter.</p>
+          <button
+            onClick={() => setSelectedType(null)}
+            className="mt-4 text-xs text-gray-400 hover:text-[#BE3D2A] transition-colors"
           >
-            Clear filter
+            Clear filter →
           </button>
         </div>
       )}
+
     </section>
   );
 };

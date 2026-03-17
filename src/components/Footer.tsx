@@ -1,116 +1,33 @@
-import { useForm, ValidationError } from '@formspree/react';
-
 const Footer = () => {
-	const [state, handleSubmit] = useForm("xwpoyndw");
+  return (
+    <footer className="bg-gray-950">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-10">
 
-	return (
-		<footer className="mt-8 sm:mt-12 md:mt-16 bg-black">
-			<div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24 py-6 sm:py-8">
-				<div className="grid gap-6 sm:gap-8 md:grid-cols-2">
-					<div>
-						<div>
-							<h3 className="text-lg font-semibold text-gray-300">Portfolio of Nishtha Nabya</h3>
-						</div>
-						<div className="mt-4 text-sm text-gray-400 max-w-md">
-							Delivering data-driven answers that truly help users succeed.<br />Always learning. Always building.
-						</div>
-						<nav className="mt-8 flex flex-wrap gap-4 text-sm">
-							<a href="/about" className="text-gray-300 hover:text-accent transition-colors">About</a>
-							<a href="/work" className="text-gray-300 hover:text-accent transition-colors">Work</a>
-							<a href="/projects" className="text-gray-300 hover:text-accent transition-colors">Projects</a>
-						</nav>
-					</div>
-					<div className="relative">
-						<div className="bg-gray-900 rounded-xl p-4 border border-gray-800">
-							<div className="flex items-center justify-between mb-3">
-								<h3 className="text-base font-bold text-white">Let's Connect</h3>
-								<div className="flex items-center gap-1">
-									<div className="w-1 h-1 bg-accent rounded-full"></div>
-									<div className="w-1 h-1 bg-accent/60 rounded-full"></div>
-									<div className="w-1 h-1 bg-accent/30 rounded-full"></div>
-								</div>
-							</div>
-							{state.succeeded ? (
-								<div className="text-center py-4">
-									<div className="text-accent text-sm font-medium mb-2">✨ Message sent successfully!</div>
-									<p className="text-gray-400 text-xs">Thanks for reaching out. I'll get back to you soon!</p>
-								</div>
-							) : (
-								<form onSubmit={handleSubmit} className="space-y-3">
-									<div>
-										<input 
-											name="name" 
-											type="text" 
-											placeholder="Your name" 
-											required 
-											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
-										/>
-										<ValidationError 
-											prefix="Name" 
-											field="name"
-											errors={state.errors}
-											className="text-red-400 text-xs mt-1"
-										/>
-									</div>
-									<div>
-										<input 
-											name="email" 
-											type="email" 
-											placeholder="your@email.com" 
-											required 
-											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200" 
-										/>
-										<ValidationError 
-											prefix="Email" 
-											field="email"
-											errors={state.errors}
-											className="text-red-400 text-xs mt-1"
-										/>
-									</div>
-									<div>
-										<textarea 
-											name="message" 
-											rows={2} 
-											placeholder="What's on your mind?" 
-											required 
-											className="w-full rounded-lg border-0 bg-black/50 text-white placeholder-gray-500 px-3 py-2 text-sm focus:outline-none focus:ring-1 focus:ring-accent transition-all duration-200 resize-none" 
-										/>
-										<ValidationError 
-											prefix="Message" 
-											field="message"
-											errors={state.errors}
-											className="text-red-400 text-xs mt-1"
-										/>
-									</div>
-									<div className="flex justify-end">
-										<button 
-											type="submit" 
-											disabled={state.submitting}
-											className="px-5 py-2.5 text-sm font-semibold rounded-lg text-white bg-accent hover:bg-accent/90 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
-										>
-											{state.submitting ? 'Sending...' : 'Send'}
-										</button>
-									</div>
-								</form>
-							)}
-						</div>
-					</div>
-				</div>
-				<div className="mt-6 pt-4 border-t border-gray-800 text-xs text-gray-500 text-center">
-					© {new Date().getFullYear()} Nishtha Nabya. All rights reserved.
-				</div>
-			</div>
-		</footer>
-	);
+        {/* Top row — name + nav */}
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+          <div>
+            <p className="font-serif text-lg text-white">Nishtha Nabya</p>
+            <p className="text-sm text-gray-500 mt-1">Building systems that make data work.</p>
+          </div>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/about"    className="text-sm text-gray-500 hover:text-white transition-colors">About</a>
+<a href="/projects" className="text-sm text-gray-500 hover:text-white transition-colors">Projects</a>
+            <a href="https://github.com/NishthaNabya" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">GitHub</a>
+            <a href="https://www.linkedin.com/in/nishtha-nabya/" target="_blank" rel="noopener noreferrer" className="text-sm text-gray-500 hover:text-white transition-colors">LinkedIn</a>
+          </nav>
+        </div>
+
+        {/* Bottom bar */}
+        <div className="mt-8 pt-6 border-t border-white/8 flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-xs text-gray-600">© {new Date().getFullYear()} Nishtha Nabya. All rights reserved.</p>
+          <a href="mailto:nishtha.nabya@gmail.com" className="text-xs text-gray-600 hover:text-white transition-colors">
+            nishtha.nabya@gmail.com
+          </a>
+        </div>
+
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
-
-
-
-
-
-
-
-
-

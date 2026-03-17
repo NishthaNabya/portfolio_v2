@@ -1,12 +1,11 @@
-import { Hero, LatestProjects, ImpactMetrics, TechStackHero } from './components';
+import { Hero, LatestProjects, ExperienceStats } from './components';
 
 function App() {
   return (
     <>
       <Hero />
       <LatestProjects />
-      <ImpactMetrics />
-      <TechStackHero />
+      <ExperienceStats />
     </>
   )
 }

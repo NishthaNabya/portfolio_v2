@@ -7,12 +7,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        accent: '#f97316',
+        accent: '#BE3D2A',
       },
       fontFamily: {
-        sans: ['"Geist Variable"', 'sans-serif'],
+        sans: ['"DM Sans"', 'sans-serif'],
+        serif: ['"DM Serif Display"', 'serif'],
       },
     },
   },
   plugins: [],
-} 
+}

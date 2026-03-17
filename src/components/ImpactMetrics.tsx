@@ -1,149 +1,61 @@
 import { useState, useEffect, useRef } from 'react';
 
+const metrics = [
+  { id: 'projects',     value: 10, suffix: '+', label: 'Projects built'      },
+  { id: 'competitions', value: 7,  suffix: '',  label: 'Competitions placed' },
+  { id: 'startups',     value: 6,  suffix: '',  label: 'Startup collabs'     },
+];
+
 const ImpactMetrics = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const [animatedValues, setAnimatedValues] = useState([0, 0, 0]);
-  const sectionRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
+  const [counts, setCounts] = useState(metrics.map(() => 0));
+  const [fired, setFired] = useState(false);
 
-  const metrics = [
-    {
-      id: 'projects',
-      targetValue: 10,
-      suffix: '+',
-      label: 'Projects Delivered',
-      description: 'From concept to completion'
-    },
-    {
-      id: 'competitions',
-      targetValue: 7,
-      suffix: '',
-      label: 'Competitions Placed',
-      description: 'Awards and recognitions earned'
-    },
-    {
-      id: 'startups',
-      targetValue: 6,
-      suffix: '',
-      label: 'Startup Collaborations',
-      description: 'Early-stage ventures supported'
-    }
-  ];
-
-  // Intersection Observer for viewport detection
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
-          }
-        });
-      },
+      ([entry]) => { if (entry.isIntersecting && !fired) setFired(true); },
       { threshold: 0.3 }
     );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
+    if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
-  }, [isVisible]);
+  }, [fired]);
 
-  // Count-up animation
   useEffect(() => {
-    if (!isVisible) return;
-
-    // Check for reduced motion preference
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    
-    if (prefersReducedMotion) {
-      // Jump straight to final values
-      setAnimatedValues(metrics.map((metric) => 
-        metric.targetValue
-      ));
-      return;
+    if (!fired) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setCounts(metrics.map(m => m.value)); return;
     }
-
-    // Animate each metric with staggered timing
-    metrics.forEach((metric, index) => {
-      const duration = 1200 + (index * 150); // 1.2s base + stagger
-      const startTime = Date.now() + (index * 100); // Stagger start times
-      const targetValue = metric.targetValue;
-
-      const animate = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        
-        // Ease-out cubic: 1 - (1 - t)^3
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const currentValue = Math.floor(easeOut * targetValue);
-
-        setAnimatedValues(prev => {
-          const newValues = [...prev];
-          newValues[index] = currentValue;
-          return newValues;
-        });
-
-        if (progress < 1) {
-          requestAnimationFrame(animate);
-        }
+    metrics.forEach((m, i) => {
+      const duration = 1100 + i * 180;
+      const start = performance.now() + i * 100;
+      const tick = (now: number) => {
+        const p = Math.min(Math.max((now - start) / duration, 0), 1);
+        const eased = 1 - Math.pow(1 - p, 3);
+        setCounts(prev => { const n = [...prev]; n[i] = Math.floor(eased * m.value); return n; });
+        if (p < 1) requestAnimationFrame(tick);
       };
-
-      setTimeout(() => requestAnimationFrame(animate), index * 100);
+      requestAnimationFrame(tick);
     });
-  }, [isVisible]);
-
-  const formatNumber = (metric: typeof metrics[0], index: number) => {
-    const animatedValue = animatedValues[index];
-    
-    // Format the animated value
-    return `${animatedValue}${metric.suffix}`;
-    
-    // Add commas for thousands
-    const formatted = animatedValue.toLocaleString();
-    return `${formatted}${metric.suffix}`;
-  };
+  }, [fired]);
 
   return (
-    <section ref={sectionRef} className="pt-8 sm:pt-12 md:pt-16 px-0 sm:px-4 bg-white">
-      {/* Left-aligned heading */}
-      <div className="text-left">
-        <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Impact by Numbers</h2>
-        <p className="text-gray-600 mt-3 sm:mt-4 max-w-2xl text-sm sm:text-base">
-          Numbers that reflect my journey of curiosity, learning, and making meaningful impact across different domains.
-        </p>
-      </div>
-      
-      {/* Statistics blocks */}
-      <div className="mt-8 sm:mt-10 md:mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
-        {metrics.map((metric, index) => (
-          <div 
-            key={metric.id}
-            className="text-center px-4"
-          >
-            {/* Large number with count-up animation */}
-            <div 
-              className="text-3xl sm:text-4xl font-bold mb-2 sm:mb-3"
-              style={{ color: '#BE3D2A' }}
-              aria-live="off"
-              aria-label={`${formatNumber(metric, index)}`}
+    <div ref={ref} className="-mx-4 sm:-mx-6 md:-mx-8 lg:-mx-16 xl:-mx-24 px-4 sm:px-6 md:px-8 lg:px-16 xl:px-24">
+      <div className="border-t border-b border-gray-200 py-5">
+        <div className="flex items-center justify-between">
+          {metrics.map((m, i) => (
+            <div
+              key={m.id}
+              className={`flex items-baseline gap-2 flex-1 ${
+                i === 1 ? 'justify-center' : i === 2 ? 'justify-end' : ''
+              }`}
             >
-              {formatNumber(metric, index)}
+              <span className="font-serif text-3xl sm:text-4xl text-[#BE3D2A]">{counts[i]}{m.suffix}</span>
+              <span className="text-xs text-gray-400">{m.label}</span>
             </div>
-            
-            {/* Bolded label */}
-            <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-1 sm:mb-2">
-              {metric.label}
-            </h3>
-            
-            {/* Description */}
-            <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">
-              {metric.description}
-            </p>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
 

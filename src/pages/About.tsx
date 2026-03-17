@@ -1,89 +1,74 @@
-import { PhotographyGrid, CurrentProjectsCard, ProfileIDCard } from '../components';
+import { ProfileIDCard } from '../components';
 
-const About: React.FC = () => {
+const About = () => {
   return (
-    <section className="pt-4 sm:pt-6 md:pt-8 pb-12 sm:pb-16 md:pb-24 px-0 sm:px-4">
-      {/* Main Content */}
-      <div className="mb-6 sm:mb-8">
-        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">About Me</h1>
-        <div className="w-24 h-1 bg-accent mb-4 sm:mb-6" />
-        
-        <div className="grid lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-12 items-start">
-          {/* Left Column - All Text Content */}
-          <div className="lg:col-span-2 text-gray-700 space-y-8">
-            {/* Intro Paragraphs */}
-            <div className="space-y-4">
-              <p className="leading-relaxed">
-                I'm an international student at the University of Minnesota's Carlson School of Management, where I double-majored studying Business Analytics, Computer Science, and Information Systems. But beyond the classes, I'm someone who enjoys solving problems with tech, building practical solutions, and always thinking about what the next fix or improvement could be.
-              </p>
-              <p className="leading-relaxed">
-                This portfolio is a showcase of my projects, experiences, and learnings. It's to document my journey, and to share it with you.
-              </p>
-            </div>
+    <section className="pt-10 pb-16">
 
-            {/* ProfileIDCard - Mobile only, shown after intro paragraphs */}
-            <div className="lg:hidden">
-              <ProfileIDCard />
-            </div>
+      {/* Header */}
+      <div className="mb-12">
+        <p className="text-xs font-medium tracking-widest text-[#BE3D2A] uppercase mb-2">Get to know me</p>
+        <h1 className="font-serif text-3xl sm:text-4xl text-gray-900">About.</h1>
+      </div>
 
-            {/* What I Bring to the Table Section */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">What I bring to the table</h3>
-              <div className="w-16 h-[3px] bg-accent mb-4 sm:mb-6" />
-              <div className="space-y-4">
-                <p className="leading-relaxed">
-                  I bring more than technical skills, I bring a mindset that constantly seeks to uncover smarter, more efficient ways to solve problems. Rather than just working with data, I enjoy transforming it into clear, meaningful insights that guide better decisions and drive tangible results. My approach is both analytical and creative, allowing me to design solutions that are practical yet innovative.
-                </p>
-                <p className="leading-relaxed">
-                  I thrive when working in fast-paced, ever-changing environments where teamwork fuels innovation. I'm naturally curious, always eager to learn from different perspectives and ready to adapt when new challenges arise. My experience spans from cutting-edge AI research to hands-on cloud consulting, giving me a flexible skill set that bridges the gap between technology and real-world business goals.
-                </p>
-                <p className="leading-relaxed">
-                  Above all, I bring energy and a growth mindset to any team, ready to contribute ideas, embrace feedback, and help move projects forward. If you're looking for someone who can balance technical depth with strategic thinking and teamwork, I'm eager to bring that perspective and drive to your organization.
-                </p>
-              </div>
-            </div>
+      {/* Bio + ID Card */}
+      <div className="grid lg:grid-cols-[1fr_260px] gap-8 lg:gap-16 mb-2">
+        <div className="space-y-5 text-gray-600 text-sm sm:text-base leading-relaxed">
+          <p>
+            I'm an international student at the University of Minnesota's Carlson School of Management, studying Computer Science and Information Systems. Beyond the classes, I like building things: tools, systems, pipelines, anything that turns a messy problem into something that actually works.
+          </p>
+          <p>
+            I've spent time across cloud consulting, AI research, and software development, which has given me a decent feel for where engineering and data intersect. I'm drawn to problems that sit at that boundary, where you need to write real code and think about the data at the same time.
+          </p>
+          <p>
+            This portfolio is part showcase, part record of what I've been learning. If something here resonates, I'd love to connect.
+          </p>
+        </div>
 
-            {/* Sed Ut Perspiciatis Section */}
-            <div>
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">Many things I love to do</h3>
-              <div className="w-16 h-[3px] bg-accent mb-4 sm:mb-6" />
-              <div className="space-y-4">
-                <p className="leading-relaxed">
-                  I’m all about trying different hobbies that inspire me and keep me growing. From dancing and painting to baking tasty treats, I love mixing creativity with fun. Staying active is a big part of my life too, with paddleboarding, swimming, and hiking regularly on my list.
-                </p>
-                <p className="leading-relaxed">
-                  Traveling is another passion. I've been lucky enough to visit almost 27 countries and feel extremely grateful to have this as part of my life. Whenever I get a break, I save up and set out to explore new places, try new things, and soak in different cultures.
-                </p>
-                <p className="leading-relaxed">
-                  I'm also passionate about photography and am building my freelance work around telling stories through images. It's a cool way to share how I see the world. All these hobbies blend together to make life more interesting. You can see some of my photos down below and follow my page here{' '}
-                  <a 
-                    href="https://www.instagram.com/unscripted_lenss/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-accent hover:text-accent/80 font-medium transition-colors duration-200 underline decoration-1 underline-offset-2"
-                  >
-                    Instagram
-                  </a>!
-                </p>
-              </div>
-            </div>
-          </div>
-          
-          {/* Right Column - ID Card and Current Thoughts */}
-          <div className="lg:col-span-1 space-y-8">
-            {/* ProfileIDCard - Desktop only, hidden on mobile */}
-            <div className="hidden lg:block">
-              <ProfileIDCard />
-            </div>
-            <CurrentProjectsCard />
+        <div className="flex justify-center lg:block mt-6 lg:mt-0">
+          <div className="w-64 lg:w-full">
+            <ProfileIDCard />
           </div>
         </div>
       </div>
 
-      {/* Photography Section */}
-      <div>
-        <PhotographyGrid />
+      {/* Beyond the code */}
+      <div className="pt-4">
+        <p className="text-xs font-medium tracking-widest text-[#BE3D2A] uppercase mb-2">Life outside code</p>
+        <h2 className="font-serif text-3xl sm:text-4xl text-gray-900 mb-6">Beyond the terminal.</h2>
+
+        <div className="grid sm:grid-cols-2 gap-8 text-sm sm:text-base text-gray-600 leading-relaxed">
+          <div className="space-y-4">
+            <p>
+              I pick up hobbies and actually stick with them. Dancing, painting, and baking keep me creative. Paddleboarding, swimming, and hiking take care of the rest when the weather cooperates.
+            </p>
+            <p>
+              Traveling is a big part of who I am. I've been lucky enough to visit close to 27 countries, and every trip has changed how I think about people and problems. When I have time off, I save up and go somewhere new.
+            </p>
+          </div>
+          <div className="space-y-4">
+            <p>
+              I'm also getting more serious about photography, specifically documentary and street work. It started as a hobby and has grown into something I'm building freelance work around.
+            </p>
+            <p>
+              You can follow along on{' '}
+              <a
+                href="https://www.instagram.com/unscripted_lenss/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-[#BE3D2A] hover:underline underline-offset-2"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                  <circle cx="12" cy="12" r="4"/>
+                  <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor"/>
+                </svg>
+                Instagram
+              </a>.
+            </p>
+          </div>
+        </div>
       </div>
+
     </section>
   );
 };
