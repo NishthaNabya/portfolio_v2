@@ -87,10 +87,6 @@ const Navbar = () => {
               className="py-3 text-sm font-medium text-gray-700 hover:text-[#BE3D2A] border-b border-gray-100 transition-colors">
               Projects
             </a>
-            <a href="/work" onClick={() => setIsMenuOpen(false)}
-              className="py-3 text-sm font-medium text-gray-700 hover:text-[#BE3D2A] border-b border-gray-100 transition-colors">
-              Experience
-            </a>
             <a href="https://github.com/NishthaNabya" target="_blank" rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
               className="py-3 text-sm font-medium text-gray-700 hover:text-[#BE3D2A] border-b border-gray-100 transition-colors">
