@@ -63,11 +63,11 @@ const ExperienceStats = () => {
                   onClick={() => navigate('/work')}
                   className="group cursor-pointer py-4 first:pt-1"
                 >
-                  <span className="text-xs font-medium text-gray-400 tracking-wide">{e.company}</span>
-                  <p className="text-sm font-medium text-gray-600 group-hover:text-[#BE3D2A] transition-colors mt-0.5 mb-1.5">
+                  <span className="text-sm font-medium text-gray-400 tracking-wide">{e.company}</span>
+                  <p className="text-base font-medium text-gray-600 group-hover:text-[#BE3D2A] transition-colors mt-0.5 mb-1.5">
                     {e.role}
                   </p>
-                  <p className="text-xs text-gray-400 leading-relaxed">{e.description}</p>
+                  <p className="text-sm text-gray-400 leading-relaxed">{e.description}</p>
                 </div>
               ))}
             </div>
