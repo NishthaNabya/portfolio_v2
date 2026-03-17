@@ -8,7 +8,6 @@ import App from './App'
 import About from './pages/About'
 import Work from './pages/Work'
 import Projects from './pages/Projects'
-import ProjectDetail from './pages/ProjectDetail'
 
 const router = createBrowserRouter([
   {
@@ -18,7 +17,6 @@ const router = createBrowserRouter([
       { path: '/about', element: <About /> },
       { path: '/work', element: <Work /> },
       { path: '/projects', element: <Projects /> },
-      { path: '/projects/:id', element: <ProjectDetail /> },
     ],
   },
 ])

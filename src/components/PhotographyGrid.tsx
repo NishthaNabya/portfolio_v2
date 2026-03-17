@@ -14,32 +14,11 @@ const PhotographyGrid = () => {
 
   const photos: Photo[] = [
     {
-      id: '1',
-      src: '/102_0509.JPG',
-      title: 'Dramatic Clouds',
-      location: 'Captured',
-      category: 'Sky'
-    },
-    {
       id: '2',
       src: '/102_1173.JPG',
       title: 'Evening Cityscape',
       location: 'Urban',
       category: 'Street'
-    },
-    {
-      id: '3',
-      src: '/edited.JPG',
-      title: 'Lakeside Serenity',
-      location: 'Waterfront',
-      category: 'Landscape'
-    },
-    {
-      id: '4',
-      src: '/edited-4.JPG',
-      title: 'Forest Light',
-      location: 'Woodland',
-      category: 'Nature'
     },
     {
       id: '5',

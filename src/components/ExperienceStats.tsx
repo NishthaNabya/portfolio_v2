@@ -7,12 +7,12 @@ const yearGroups = [
       {
         company: 'SmartPal AI Inc',
         role: 'Software Engineering Intern',
-        description: 'Building AI-powered tools and data pipelines to support research initiatives, contributing to LLM integrations and feature development for a startup product.',
+        description: 'Built data pipelines and LLM integrations for a GenAI chatbot, reducing cost reporting time by 80% and doubling team analytics capacity.',
       },
       {
         company: 'Elire LLC',
         role: 'Cloud Intern',
-        description: 'Configuring and implementing Microsoft Dynamics 365 solutions for enterprise clients, supporting ERP module setup and functional design across cloud environments.',
+        description: 'Delivered Oracle Cloud consulting across 3 client projects, building automation tools and dashboards that cut weekly reporting time nearly in half.',
       },
     ],
   },
@@ -27,7 +27,7 @@ const yearGroups = [
       {
         company: 'Sparkling and Sake',
         role: 'Data Analyst Intern',
-        description: 'Analyzed sales and inventory data to surface business insights, supporting decision-making for a boutique beverage brand through dashboards and reports.',
+        description: 'Wrote SQL queries to analyze production and inventory data, surfacing inefficiencies that directly improved manufacturing decisions.',
       },
     ],
   },
@@ -37,7 +37,7 @@ const yearGroups = [
       {
         company: 'Carlson School of Management',
         role: 'Teaching Assistant',
-        description: 'Supported undergraduate instruction in business and analytics courses, holding office hours and guiding students through coursework and applied projects.',
+        description: 'Mentored 180+ students across business and analytics courses, using Canvas data to lift average scores from 84% to 96% over two years.',
       },
     ],
   },

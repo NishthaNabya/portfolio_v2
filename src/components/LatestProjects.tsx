@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom';
-import { getFeaturedProjects } from '../data/projects';
+import { projectsData } from '../data/projects';
 import { useState, useEffect, useRef } from 'react';
 
 const metrics = [
@@ -11,7 +11,8 @@ const metrics = [
 
 const LatestProjects = () => {
   const navigate = useNavigate();
-  const featured = getFeaturedProjects().slice(0, 3);
+  const featuredIds = ['render-mcp', 'develop-for-good', 'minneanalytics'];
+  const featured = featuredIds.map(id => projectsData.find(p => p.id === id)).filter(Boolean) as typeof projectsData;
   const ref = useRef<HTMLDivElement>(null);
   const [counts, setCounts] = useState(metrics.map(() => 0));
   const [fired, setFired] = useState(false);
@@ -63,23 +64,37 @@ const LatestProjects = () => {
 
       {/* Hover-reveal cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-0">
-        {featured.map((p) => (
-          <div
-            key={p.id}
-            onClick={() => navigate(`/projects/${p.id}`)}
-            className="group relative rounded-xl border border-gray-200 bg-white overflow-hidden cursor-pointer h-44 hover:border-[#BE3D2A]/30 transition-colors"
-          >
-            <div className="absolute inset-0 flex flex-col justify-center p-5 transition-transform duration-300 group-hover:-translate-y-full">
-              <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest mb-2">{p.type}</span>
-              <h3 className="font-serif text-xl text-gray-900">{p.title}</h3>
-              <span className="text-xs text-gray-400 mt-1">{p.year}</span>
+        {featured.map((p) => {
+          const link = p.links?.github || p.links?.live || p.links?.demo;
+          return (
+            <div
+              key={p.id}
+              onClick={() => { if (link) window.open(link, '_blank', 'noopener noreferrer'); }}
+              className={`group relative rounded-xl border border-gray-200 bg-white overflow-hidden h-48 hover:border-[#BE3D2A]/30 transition-colors ${link ? 'cursor-pointer' : 'cursor-default'}`}
+            >
+              <div className="absolute inset-0 flex flex-col justify-between p-5 transition-transform duration-300 group-hover:-translate-y-full">
+                <span className="text-[10px] font-medium text-gray-400 uppercase tracking-widest">{p.type}</span>
+                <div>
+                  <h3 className="font-serif text-xl text-gray-900 mb-1">{p.title}</h3>
+                  <span className="text-xs text-gray-400">{p.year}</span>
+                </div>
+              </div>
+              <div className="absolute inset-0 flex flex-col justify-between p-5 bg-[#BE3D2A] translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                <p className="text-white/90 text-sm leading-relaxed line-clamp-3">{p.subtitle}</p>
+                <div className="flex flex-wrap gap-1.5 mt-2">
+                  {p.technologies.slice(0, 4).map(tech => (
+                    <span key={tech} className="text-[10px] text-white/70 border border-white/30 rounded-full px-2 py-0.5">{tech}</span>
+                  ))}
+                </div>
+                {link && (
+                  <span className="mt-3 text-white/80 text-xs font-medium">
+                    {p.links?.github?.includes('pull') ? 'PR →' : 'View →'} {link.replace('https://github.com/', 'github.com/')}
+                  </span>
+                )}
+              </div>
             </div>
-            <div className="absolute inset-0 flex flex-col justify-center p-5 bg-[#BE3D2A] translate-y-full transition-transform duration-300 group-hover:translate-y-0">
-              <p className="text-white/90 text-sm leading-relaxed line-clamp-3">{p.subtitle}</p>
-              <span className="mt-3 text-white/70 text-xs">View project →</span>
-            </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* Stats strip — acts as section divider */}

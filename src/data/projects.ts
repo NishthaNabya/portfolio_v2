@@ -26,7 +26,7 @@ export const projectsData: ProjectDetail[] = [
     id: 'InsightEdge',
     title: 'InsightEdge',
     subtitle: 'Sentiment analysis application using RoBERTA-based transformer for business insights.',
-    year: 2025,
+    year: 2024,
     imageUrl: '/photos/InsightEdge.jpg',
     type: 'Software Engineering',
     description: 'Developed a sophisticated sentiment analysis application leveraging a RoBERTA-based transformer model to classify text data with high accuracy for business insights. This project demonstrates advanced natural language processing capabilities and machine learning implementation.',
@@ -34,9 +34,7 @@ export const projectsData: ProjectDetail[] = [
     challenges: 'The primary challenge was fine-tuning the RoBERTA model for domain-specific sentiment analysis while maintaining high accuracy across diverse text inputs. Optimizing model performance and handling large-scale text processing required careful architecture design.',
     solution: 'Implemented a RoBERTA-based transformer model with custom fine-tuning for sentiment classification. Used advanced preprocessing techniques, data augmentation, and model optimization to achieve high accuracy. Built a scalable pipeline for processing large volumes of text data.',
     outcome: 'Successfully developed a high-accuracy sentiment analysis model that provides valuable business insights from text data. The model demonstrates strong performance across various text types and can be integrated into business intelligence workflows.',
-    links: {
-      github: 'https://github.com/username/nlp-transformer'
-    }
+    links: {}
   },
   {
     id: 'minneanalytics',
@@ -84,7 +82,7 @@ export const projectsData: ProjectDetail[] = [
     id: 'render-mcp',
     title: 'Render',
     subtitle: 'Added trigger_deploy tool to the official MCP server, enabling programmatic deploys via Claude and other AI agents. PR #14 open.',
-    year: 2025,
+    year: 2026,
     imageUrl: '',
     type: 'Open Source',
     description: 'Contributed to Render\'s official MCP (Model Context Protocol) server written in Go. Added the trigger_deploy tool, enabling AI agents like Claude to programmatically trigger deployments on Render\'s cloud platform. Render raised a $100M Series C.',
@@ -98,7 +96,7 @@ export const projectsData: ProjectDetail[] = [
     id: 'braintrust-autoevals',
     title: 'Braintrust',
     subtitle: 'Fixed a ContextPrecision scoring bug in the autoevals Python library used for LLM evaluation. PR #178 open.',
-    year: 2025,
+    year: 2026,
     imageUrl: '',
     type: 'Open Source',
     description: 'Contributed to Braintrust\'s autoevals library, a widely-used Python package for evaluating LLM outputs. Fixed a bug in the ContextPrecision scorer that produced incorrect precision scores under certain input conditions. Braintrust raised a $121M Series B.',

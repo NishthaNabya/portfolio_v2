@@ -233,7 +233,7 @@ const Leadership: React.FC = () => {
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
           <a 
-            href="mailto:hello@example.com" 
+            href="mailto:nishtha.nabya@gmail.com"
             className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-accent hover:bg-accent/90 text-white rounded-lg font-semibold transition-colors text-base sm:text-lg"
           >
             <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -243,7 +243,7 @@ const Leadership: React.FC = () => {
           </a>
           <div className="text-gray-400 text-sm sm:text-base">or</div>
           <a 
-            href="#" 
+            href="/projects"
             className="inline-flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-4 border-2 border-gray-300 text-gray-700 hover:border-accent hover:text-accent rounded-lg font-semibold transition-colors text-base sm:text-lg"
           >
             <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
