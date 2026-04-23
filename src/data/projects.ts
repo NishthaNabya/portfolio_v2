@@ -70,7 +70,7 @@ export const projectsData: ProjectDetail[] = [
     subtitle: 'Framer-based website redesign for nonprofit organization supporting social impact.',
     year: 2025,
     imageUrl: '/photos/Develop for good.jpg',
-    type: 'Software Engineering',
+    type: 'Product Engineering',
     description: 'Volunteered with Develop for Good to redesign their website using Framer, focusing on improving user experience and visual appeal for a nonprofit organization dedicated to connecting skilled volunteers with social impact projects.',
     technologies: ['Framer', 'Frontend', 'React'],
     challenges: 'Understanding the unique needs of a nonprofit organization while creating a design that would effectively communicate their mission and encourage volunteer sign-ups.',
@@ -124,4 +124,4 @@ export const getFeaturedProjects = (): ProjectItem[] => {
   return featuredIds.map(id => allProjects.find(p => p.id === id)).filter(Boolean) as ProjectItem[];
 };
 
-export const typeOptions = ['Data Engineering', 'Software Engineering', 'Hackathon', 'Open Source'];
+export const typeOptions = ['Product Engineering', 'Software Engineering', 'Hackathon', 'Open Source'];

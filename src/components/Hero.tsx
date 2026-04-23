@@ -54,7 +54,7 @@ const Hero = () => {
 
       {/* CTAs */}
       <div className="flex flex-wrap items-center gap-3 mb-10">
-        <a href="#projects" className="px-5 py-2.5 text-sm font-medium text-white bg-[#BE3D2A] rounded-full hover:bg-[#a8341f] transition-colors">
+        <a href="/projects" className="px-5 py-2.5 text-sm font-medium text-white bg-[#BE3D2A] rounded-full hover:bg-[#a8341f] transition-colors">
           View my work →
         </a>
         <a href="https://github.com/NishthaNabya" target="_blank" rel="noopener noreferrer" className="px-5 py-2.5 text-sm font-medium text-gray-700 border border-gray-300 rounded-full hover:border-gray-400 hover:text-gray-900 transition-colors">
