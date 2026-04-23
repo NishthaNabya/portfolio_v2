@@ -69,7 +69,17 @@ const Projects = () => {
                     <span key={tech} className="text-[10px] text-gray-400 border border-gray-200 rounded-full px-2 py-0.5">{tech}</span>
                   ))}
                 </div>
-                {link && <span className="text-xs text-[#BE3D2A]">{p.links?.github?.includes('pull') ? 'PR →' : 'View →'} {link.replace('https://github.com/', 'github.com/')}</span>}
+                {link && (
+                  <a
+                    href={link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={(e) => e.stopPropagation()}
+                    className="text-xs text-[#BE3D2A] underline underline-offset-2 hover:text-[#a8341f] transition-colors"
+                  >
+                    Link to Project
+                  </a>
+                )}
               </div>
 
               {/* Desktop: hover-reveal card */}
@@ -85,18 +95,26 @@ const Projects = () => {
                     <span className="text-xs text-gray-400">{p.year}</span>
                   </div>
                 </div>
-                <div className="absolute inset-0 flex flex-col justify-between p-5 bg-[#BE3D2A] translate-y-full transition-transform duration-300 group-hover:translate-y-0">
+                <div className="absolute inset-0 flex flex-col p-5 bg-[#BE3D2A] translate-y-full transition-transform duration-300 group-hover:translate-y-0">
                   <p className="text-white/90 text-sm leading-relaxed line-clamp-3">{p.subtitle}</p>
-                  <div className="flex flex-wrap gap-1.5 mt-2">
+                  <div className="flex-1 flex items-center">
+                    {link && (
+                      <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="text-white/90 text-xs font-medium underline underline-offset-2 hover:text-white transition-colors"
+                      >
+                        Link to Project
+                      </a>
+                    )}
+                  </div>
+                  <div className="flex flex-wrap gap-1.5 mt-auto pt-2">
                     {p.technologies.slice(0, 4).map(tech => (
                       <span key={tech} className="text-[10px] text-white/70 border border-white/30 rounded-full px-2 py-0.5">{tech}</span>
                     ))}
                   </div>
-                  {link && (
-                    <span className="mt-3 text-white/80 text-xs font-medium">
-                      {p.links?.github?.includes('pull') ? 'PR →' : 'View →'} {link.replace('https://github.com/', 'github.com/')}
-                    </span>
-                  )}
                 </div>
               </div>
             </>
