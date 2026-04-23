@@ -5,8 +5,11 @@ const Projects = () => {
   const [selectedType, setSelectedType] = useState<string | null>(null);
 
   const filtered = useMemo(() => {
-    if (!selectedType) return projectsData;
-    return projectsData.filter(p => p.type === selectedType);
+    const base = selectedType
+      ? projectsData.filter(p => p.type === selectedType)
+      : projectsData;
+
+    return [...base].sort((a, b) => b.year - a.year);
   }, [selectedType]);
 
   const handleCardClick = (link?: string) => {

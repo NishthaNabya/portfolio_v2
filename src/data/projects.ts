@@ -106,6 +106,48 @@ export const projectsData: ProjectDetail[] = [
     outcome: 'PR #178 open — corrects ContextPrecision scoring in autoevals, improving reliability of LLM evaluation pipelines built on Braintrust.',
     links: { github: 'https://github.com/braintrustdata/autoevals/pull/178' }
   },
+  {
+    id: 'snap-cli',
+    title: 'Snap-CLI',
+    subtitle: 'CLI workflow to reduce agentic drift by keeping local .env and database context aligned while shipping code to GitHub.',
+    year: 2026,
+    imageUrl: '',
+    type: 'Software Engineering',
+    description: 'Built Snap-CLI to solve agentic drift when coding with AI agents. The tool helps preserve local execution context by validating and syncing expected environment variables and database configuration while still enabling clean GitHub-based collaboration.',
+    technologies: ['TypeScript', 'CLI', 'Node.js', 'Developer Tooling'],
+    challenges: 'AI-assisted coding can drift from real local runtime state when .env setup or database assumptions diverge from what the agent inferred from repository files.',
+    solution: 'Designed a CLI workflow that snapshots required runtime context, checks environment/database consistency before key steps, and guides developers through mismatches early.',
+    outcome: 'Reduced context mismatch errors during agent-assisted development and improved reliability from local testing through pull request workflows.',
+    links: { github: 'https://github.com/NishthaNabya/Snap-CLI' }
+  },
+  {
+    id: 'agrishield-terminal',
+    title: 'AgriShield Terminal',
+    subtitle: 'Product engineering terminal experience for agricultural workflows, focused on practical field operations and decision support.',
+    year: 2026,
+    imageUrl: '',
+    type: 'Product Engineering',
+    description: 'Developed AgriShield Terminal as a product-engineering initiative to support agriculture-focused operational workflows through a streamlined terminal interface.',
+    technologies: ['Product Engineering', 'Terminal UX', 'TypeScript'],
+    challenges: 'Translating complex field operations into a terminal-first workflow that remains fast, understandable, and useful for repeated daily use.',
+    solution: 'Built a focused command experience with clear flows and feedback loops so users can move from input to actionable output with minimal friction.',
+    outcome: 'Delivered a practical terminal product concept that demonstrates how product thinking and engineering can combine in domain-specific tooling.',
+    links: { github: 'https://github.com/NishthaNabya/AgriShield_Terminal' }
+  },
+  {
+    id: 'preflight',
+    title: 'Preflight',
+    subtitle: 'Verification layer for payroll workflows that compares runs, flags anomalies in plain English, and scores confidence before money moves.',
+    year: 2026,
+    imageUrl: '',
+    type: 'Product Engineering',
+    description: 'Built Preflight as a product feature to strengthen trust in self-driving payroll workflows. It sits underneath both approval paths, analyzes run-to-run changes, and surfaces risk before execution.',
+    technologies: ['TypeScript', 'Next.js', 'Tailwind CSS', 'Product Engineering'],
+    challenges: 'Payroll automation is high-stakes: teams need speed, but also confidence that unusual values are caught before approval or autopay execution.',
+    solution: 'Implemented a verification layer that diffs each payroll run against the previous one, flags unusual changes in plain English, and produces an overall confidence score.',
+    outcome: 'Improved decision confidence without adding workflow friction by turning opaque payroll deltas into clear, actionable signals.',
+    links: { github: 'https://github.com/NishthaNabya/PreFlight' }
+  },
 ];
 
 export const getProjectItems = (): ProjectItem[] => {
