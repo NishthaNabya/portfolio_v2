@@ -35,6 +35,17 @@ const Navbar = () => {
           GitHub
         </a>
         <a
+          href="https://www.x.com/Nishtha__N"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="flex items-center gap-1.5 text-sm text-gray-600 hover:text-gray-900 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M18.9 2H22l-6.8 7.8L23 22h-6.1l-4.8-6.2L6.7 22H3.6l7.3-8.3L1.5 2h6.3l4.3 5.7L18.9 2zM17.8 20h1.7L7 3.9H5.2L17.8 20z" />
+          </svg>
+          X
+        </a>
+        <a
           href="https://www.linkedin.com/in/nishtha-nabya/"
           target="_blank"
           rel="noopener noreferrer"
@@ -91,6 +102,11 @@ const Navbar = () => {
               onClick={() => setIsMenuOpen(false)}
               className="py-3 text-sm font-medium text-gray-700 hover:text-[#BE3D2A] border-b border-gray-100 transition-colors">
               GitHub
+            </a>
+            <a href="https://www.x.com/Nishtha__N" target="_blank" rel="noopener noreferrer"
+              onClick={() => setIsMenuOpen(false)}
+              className="py-3 text-sm font-medium text-gray-700 hover:text-[#BE3D2A] border-b border-gray-100 transition-colors">
+              X
             </a>
             <a href="https://www.linkedin.com/in/nishtha-nabya/" target="_blank" rel="noopener noreferrer"
               onClick={() => setIsMenuOpen(false)}
