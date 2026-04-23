@@ -20,7 +20,7 @@ const tools = [
 const doubled = [...tools, ...tools];
 
 const Hero = () => {
-  const skills = ['Full-stack thinking', 'Cloud infrastructure', 'Database design', 'ETL pipelines'];
+  const skills = ['Full Stack Thinking', '0->1 Builder', 'Open Source Contributor'];
 
   return (
     <section className="pt-14 bg-white">
@@ -33,14 +33,13 @@ const Hero = () => {
       </div>
 
       {/* Headline */}
-      <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-tight text-gray-900 max-w-3xl mb-6">
-        Building systems that make{' '}
-        <em className="not-italic italic text-[#BE3D2A]">data work.</em>
+      <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl lg:text-[4rem] leading-tight text-gray-900 max-w-3xl mb-6">
+        Hey, I'm Nishtha. I turn ideas into <span className="text-[#BE3D2A]">working products.</span>
       </h1>
 
       {/* Bio */}
       <p className="text-gray-600 text-base sm:text-lg max-w-xl mb-6 leading-relaxed">
-        I design and build data pipelines, cloud-native platforms, and full-stack tools that turn raw, messy inputs into reliable infrastructure and real product decisions.
+        I build things end to end and I'm opinionated about why they should exist. The gap between 'this works' and 'people want to use it' is where I do my best thinking.
       </p>
 
       {/* Skill chips */}
@@ -65,11 +64,10 @@ const Hero = () => {
       {/* Stack strip */}
       <div className="border-t border-gray-100 pt-6 pb-8">
         <p className="text-[10px] font-medium tracking-widest text-gray-400 uppercase mb-4">Tech Stack</p>
-        {/* Break out of container to full viewport width */}
-        <div className="overflow-hidden relative -mx-4 sm:-mx-6 md:-mx-8 lg:-mx-16 xl:-mx-24">
+        <div className="overflow-hidden relative">
           <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-white to-transparent" />
           <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-white to-transparent" />
-          <div className="flex animate-marquee w-max gap-2 px-4">
+          <div className="flex animate-marquee w-max gap-3">
             {doubled.map((tool, i) => (
               <div key={`${tool.name}-${i}`} className="inline-flex items-center gap-1.5 px-4 py-2 border border-gray-200 rounded-full bg-white text-sm font-medium text-gray-600 whitespace-nowrap select-none">
                 {tool.icon}

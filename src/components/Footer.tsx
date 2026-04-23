@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
           <div>
             <p className="font-serif text-lg text-white">Nishtha Nabya</p>
-            <p className="text-sm text-gray-500 mt-1">Building systems that make data work.</p>
+            <p className="text-sm text-gray-500 mt-1">Hey, I'm Nishtha. I turn ideas into working products.</p>
           </div>
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
             <a href="/about"    className="text-sm text-gray-500 hover:text-white transition-colors">About</a>
